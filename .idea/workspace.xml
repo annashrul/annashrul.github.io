@@ -2,6 +2,41 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f96b02ca-b463-415a-8f78-7dc77c6208d9" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/mobile/1.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/mobile/10.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/mobile/11.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/mobile/12.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/mobile/13.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/mobile/14.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/mobile/15.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/mobile/16.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/mobile/17.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/mobile/18.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/mobile/19.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/mobile/2.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/mobile/20.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/mobile/3.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/mobile/4.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/mobile/5.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/mobile/6.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/mobile/7.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/mobile/8.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/mobile/9.jpeg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/web/1.PNG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/web/10.PNG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/web/11.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/web/12.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/web/13.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/web/14.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/web/2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/web/3.PNG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/web/4.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/web/5.PNG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/web/6.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/web/7.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/web/8.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/img/web/9.png" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,8 +51,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="679" column="0" lean-forward="false" selection-start-line="679" selection-start-column="0" selection-end-line="679" selection-end-column="0" />
+            <state relative-caret-position="-592">
+              <caret line="11" column="98" lean-forward="false" selection-start-line="11" selection-start-column="98" selection-end-line="11" selection-end-column="98" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#div#1;n#div#0;n#div#1;n#section#2;n#div#0;n#div#2;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -138,12 +173,12 @@
       <updated>1650989891853</updated>
       <workItem from="1650989893191" duration="5291000" />
       <workItem from="1651072988862" duration="53000" />
-      <workItem from="1651753824612" duration="5586000" />
+      <workItem from="1651753824612" duration="6278000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10930000" />
+    <option name="totallyTimeSpent" value="11622000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -294,8 +329,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="679" column="0" lean-forward="false" selection-start-line="679" selection-start-column="0" selection-end-line="679" selection-end-column="0" />
+        <state relative-caret-position="-592">
+          <caret line="11" column="98" lean-forward="false" selection-start-line="11" selection-start-column="98" selection-end-line="11" selection-end-column="98" />
           <folding>
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#div#1;n#div#0;n#div#1;n#section#2;n#div#0;n#div#2;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
