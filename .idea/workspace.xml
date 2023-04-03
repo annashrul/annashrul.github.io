@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f96b02ca-b463-415a-8f78-7dc77c6208d9" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/file/cv.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/file/cv.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -93,6 +92,7 @@
   "keyToString": {
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "C:/xampp/htdocs/annashrul.github.io",
+    "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -116,7 +116,7 @@
       <workItem from="1651072988862" duration="53000" />
       <workItem from="1651753824612" duration="6433000" />
       <workItem from="1651840707204" duration="68000" />
-      <workItem from="1680559855430" duration="616000" />
+      <workItem from="1680559855430" duration="2230000" />
     </task>
     <servers />
   </component>
