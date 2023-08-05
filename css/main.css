@@ -7,9 +7,9 @@
 }
 
 body {
-    background-color: #5050f5;
-    background: -webkit-gradient(linear,left top,left bottom,from(#9d2bf3),to(#5050f5));
-    background: linear-gradient(#9d2bf3,#5050f5);
+    /*background-color: #5050f5;*/
+    /*background: -webkit-gradient(linear,left top,left bottom,from(#5050f5),to(#6464F9));*/
+    /*background: linear-gradient(#5050f5,#6464F9);*/
     margin: 0;
     width: 100%;
     height: 100%;
@@ -83,7 +83,10 @@ p {
     width: 100%;
     height: 100%;
     min-height: 100%;
-    padding: 0 100px;
+    padding-right:100px;
+    padding-top:0px;
+    padding-bottom:0px;
+    padding-left:10px;
     overflow: hidden
 }
 
@@ -91,8 +94,8 @@ p {
     position: relative;
     width: 100%;
     max-width: 1280px;
-    min-height: 80vh;
-    margin: 10vh auto;
+    min-height: 90vh;
+    margin: 5vh auto;
     padding: 0;
     background-color: #444;
     -webkit-box-shadow: 0 0 100px -5px rgba(0,0,0,.25);
