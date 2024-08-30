@@ -56,9 +56,9 @@
 
     <script src="https://lmpixels.com/demo/breezycv/dark/3/js/modernizr.custom.js"></script>
     <style>
-        *{
-            text-transform: uppercase !important;
-        }
+      * {
+        text-transform: uppercase !important;
+      }
     </style>
   </head>
 
@@ -219,7 +219,7 @@
                 <!-- Personal Information -->
                 <div class="row">
                   <div class="col-xs-12 col-sm-7">
-                    <p>
+                    <p style="color: grey">
                       Assalamualaikum. My name is Annashrul, and I am a Software
                       Developer with extensive experience in the industry since
                       2016. I have a strong creative drive and a high level of
@@ -465,8 +465,8 @@
         skill.map((res) => {
           html += `
         <div class="skill clearfix">
-            <h4>${res.language}</h4> <br/>
-            <p>${res.variant}</p>
+            <h3>${res.language}</h4> <br/>
+            <p style="color:grey">${res.variant}</p>
             <div class="skill-value"></div>
         </div>
         <div class="skill-container skill-7">
@@ -594,7 +594,9 @@
         let html = "";
         experience.map((res) => {
           let desc = "";
-          res.desc.map((row, index) => (desc += `<li>${row}</li>`));
+          res.desc.map(
+            (row, index) => (desc += `<li style="color:grey">${row}</li>`)
+          );
 
           html += `<div class="timeline-item clearfix">
         <div class="left-part">
@@ -602,7 +604,7 @@
         </div>
         <div class="divider"></div>
         <div class="right-part">
-          <h4 class="item-title">${res.title}</h4>
+          <h3 class="item-title">${res.title}</h3>
           <h4 class="item-title">${res.position}</h4>
           <ul>${desc}</ul>
         </div>
