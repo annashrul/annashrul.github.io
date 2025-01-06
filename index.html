@@ -391,13 +391,18 @@
             tError:
               '<a href="%url%">The image #%curr%</a> could not be loaded.',
             titleSrc: function (item) {
-              return (
-                '<a target="_blank" href="' +
-                item.el.attr("link") +
-                '">' +
-                item.el.attr("title") +
-                "</a>"
-              );
+              console.log("item", item.el.attr("link"));
+              const linkUrl = item.el.attr("link");
+              if (linkUrl !== "") {
+                return (
+                  item.el.attr("title") +
+                  '&nbsp; - &nbsp;<a target="_blank" href="' +
+                  item.el.attr("link") +
+                  '">go to website</a>'
+                );
+              } else {
+                return item.el.attr("title");
+              }
             },
           },
         });
