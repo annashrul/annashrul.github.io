@@ -4,7 +4,7 @@ const pathImg =
 const imgWeb = `${pathImg}web/`;
 const imgMobile = `${pathImg}mobile/`;
 
-const CACHE_NAME = "cache-v1";
+const CACHE_NAME = "cache-v2";
 
 const urlsToCache = [
   "./index.html", // HTML
@@ -39,7 +39,7 @@ const urlsToCache = [
   `${imgWeb}erp-marketing.png`,
   `${imgWeb}tomas.png`,
   `${imgWeb}kopkar.png`,
-  `${imgMobile}/17.png`,
+  `${imgMobile}17.png`,
   `${imgMobile}14.png`,
   `${imgWeb}12.png`,
   `${imgWeb}pesanku.PNG`,
