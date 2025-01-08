@@ -62,7 +62,6 @@ const urlsToCache = [
   `${imgWeb}7.png`,
   `${imgWeb}kolabiz-landing.png`,
   `${imgWeb}kolabiz-fo.png`,
-  `${imgMobile}2.jpeg`,
   `${imgMobile}4.jpeg`,
   `${imgMobile}8.jpeg`,
   `${imgMobile}13.jpeg`,
