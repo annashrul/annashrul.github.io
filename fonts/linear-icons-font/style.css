@@ -697,3 +697,7 @@
 .lnr-pointer-left:before {
     content: "\e8a9"
 }
+
+.lnr-flag-id:before {
+    content: "\e8aa";
+}

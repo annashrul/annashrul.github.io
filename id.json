@@ -1,0 +1,178 @@
+{
+  "header": {
+    "name": "Annashrul Yusuf S.Tr,T",
+    "title": "Pengembang Perangkat Lunak",
+    "downloadCV": "Unduh CV"
+  },
+  "menu": {
+    "home": "Beranda",
+    "aboutMe": "Tentang Saya",
+    "resume": "Riwayat Hidup",
+    "portofolio": "Portofolio"
+  },
+  "content": {
+    "aboutMe": {
+      "title": "Tentang Saya",
+      "body": "Assalamualaikum. Nama saya Annashrul, dan saya adalah seorang Pengembang Perangkat Lunak dengan pengalaman luas di industri sejak tahun 2016. Saya memiliki dorongan kreatif yang kuat dan tingkat dedikasi yang tinggi untuk mengembangkan solusi perangkat lunak yang inovatif dan berkualitas tinggi. Sepanjang karir saya, saya telah berhasil menyelesaikan berbagai proyek dengan skala dan kompleksitas yang berbeda. Kemampuan saya untuk memecahkan masalah, berkomunikasi secara efektif, dan berkolaborasi dalam tim telah memungkinkan saya mencapai tujuan dan melampaui ekspektasi. Saya memiliki keahlian dalam berbagai bahasa pemrograman dan terampil dalam menggunakan berbagai kerangka kerja. Selain itu, saya memiliki pengetahuan luas tentang sistem operasi, basis data, dan prinsip-prinsip pengembangan perangkat lunak. Saya adalah pembelajar cepat dan selalu bersemangat untuk menjelajahi hal-hal baru. Saya yakin bahwa saya dapat memberikan kontribusi yang signifikan untuk tim Anda.",
+      "age": "Umur",
+      "residence": "Tempat Tinggal",
+      "address": "Alamat",
+      "email": "Surel",
+      "phone": "Telepon"
+    },
+    "resume": {
+      "title": "Riwayat Hidup",
+      "experience": {
+        "title": "Pengalaman",
+        "body": [
+          {
+            "title": "PT KALDUSARI NABATI",
+            "position": "Frontend Developer - onsite",
+            "periode": "Mei 2023 - sekarang",
+            "desc": [
+              "Bekerja sama dengan anggota tim lain untuk mengidentifikasi dan menghilangkan bug perangkat lunak.",
+              "Bekerja dengan tim teknis dan desain untuk mengembangkan aplikasi perangkat lunak yang inovatif.",
+              "Melakukan pemeliharaan pada beberapa aplikasi yang ada."
+            ]
+          },
+          {
+            "title": "PT NETINDO MEDIATAMA PERKASA",
+            "position": "Web Developer - remote",
+            "periode": "Des 2023 - Des 2024",
+            "desc": [
+              "Memelihara aplikasi Android dan Web POS (Point of Sale).",
+              "Mengonfigurasi pengaturan untuk klien baru yang menggunakan sistem POS (Point of Sale).",
+              "Mengembangkan API.",
+              "Mengintegrasikan API ke dalam frontend (web).",
+              "Menyebarkan aplikasi ke Digital Ocean."
+            ]
+          },
+          {
+            "title": "PT TRIWIKRAMA",
+            "position": "Web Developer - remote",
+            "periode": "Jan - Jun 2023",
+            "desc": [
+              "Memelihara aplikasi HRIS.",
+              "Memelihara aplikasi ERP.",
+              "Mengembangkan API.",
+              "Mengintegrasikan API ke dalam frontend (web)."
+            ]
+          },
+          {
+            "title": "PT ELSPASIAL",
+            "position": "Web Developer - remote",
+            "periode": "Feb 2023 - Nov 2023",
+            "desc": [
+              "Memelihara Aplikasi Koperasi TOYOTA.",
+              "Memelihara Aplikasi Shuttle Karyawan TOYOTA.",
+              "Mengembangkan API.",
+              "Mengintegrasikan API ke dalam frontend (web)."
+            ]
+          },
+          {
+            "title": "PT LAYANAN CERDAS INDONESIA",
+            "position": "Web Developer - onsite",
+            "periode": "Jun 2022 - Mar 2023",
+            "desc": [
+              "Bekerja sama dengan anggota tim lain untuk mengidentifikasi dan menghilangkan bug perangkat lunak.",
+              "Bekerja dengan tim teknis dan desain untuk mengembangkan aplikasi perangkat lunak yang inovatif.",
+              "Melakukan pemeliharaan pada beberapa aplikasi yang ada.",
+              "Merancang basis data.",
+              "Mengembangkan API.",
+              "Mengintegrasikan API ke dalam frontend (web).",
+              "Menjadi anggota panitia logistik untuk acara T20."
+            ]
+          },
+          {
+            "title": "PT NETINDO MEDIATAMA PERKASA",
+            "position": "WEB & ANDROID DEVELOPER - onsite",
+            "periode": "Des 2018 - Jun 2022",
+            "desc": [
+              "Mengunjungi pelanggan untuk melakukan pemeliharaan.",
+              "Bekerja sama dengan anggota tim lain untuk mengidentifikasi dan menghilangkan bug perangkat lunak.",
+              "Bekerja dengan tim teknis dan desain untuk mengembangkan aplikasi perangkat lunak yang inovatif.",
+              "Melakukan pemeliharaan pada beberapa aplikasi yang ada.",
+              "Menjelajahi bahasa pemrograman untuk diterapkan dalam proyek baru.",
+              "Merancang basis data.",
+              "Mengembangkan API.",
+              "Mengintegrasikan API ke dalam frontend (web)."
+            ]
+          },
+          {
+            "title": "PT THAIBAH",
+            "position": "Fullstack Developer - remote",
+            "periode": "Feb – Des 2018",
+            "desc": [
+              "Mengembangkan aplikasi web Multi-Level Marketing.",
+              "Mengembangkan aplikasi Android Multi-Level Marketing.",
+              "Memelihara aplikasi inventaris.",
+              "Mengembangkan aplikasi menggunakan React.js (frontend), Laravel (backend), dan PostgreSQL (database)."
+            ]
+          },
+          {
+            "title": "PT AROMANIS SIMPING",
+            "position": "Fullstack Developer - remote",
+            "periode": "Des 2017 – Feb 2018",
+            "desc": [
+              "Mengembangkan aplikasi inventaris.",
+              "Memelihara aplikasi inventaris.",
+              "Mengembangkan aplikasi menggunakan React.js (frontend), Node.js (backend), dan PostgreSQL (database).",
+              "Menyebarkan aplikasi ke shared hosting.",
+              "Memecahkan masalah perangkat keras."
+            ]
+          },
+          {
+            "title": "FREELANCE",
+            "position": "Fullstack Developer - remote",
+            "periode": "Jan 2016 - Sekarang",
+            "desc": [
+              "Memotong UI.",
+              "Merancang basis data.",
+              "Merancang API.",
+              "Mengintegrasikan API dengan frontend.",
+              "Mengonfigurasi server.",
+              "Tech Stack: CodeIgniter, Laravel, React.js, Next.js, Vue.js, PHP Native, Node.js, Indexed DB, SQL Server, MySQL, PostgreSQL, Flutter, SQLite, Firebase, MongoDB, Server."
+            ]
+          }
+        ]
+      },
+      "education": {
+        "title": "pendidikan",
+        "body": [
+          {
+            "periode": "2015 - 2019",
+            "name": "POLITEKNIK TEDC BANDUNG",
+            "major": "Teknik Informatika"
+          },
+          {
+            "periode": "2012 - 2015",
+            "name": "SMK PGRI 3 CIMAHI",
+            "major": "Teknik Pendingin & Tata Udara"
+          },
+          {
+            "periode": "2009 - 2012",
+            "name": "SMPN 5 CIMAHI",
+            "major": ""
+          },
+          {
+            "periode": "2003 - 2009",
+            "name": "SDN PADASUKA MANDIRI II",
+            "major": ""
+          }
+        ]
+      },
+      "skill": {
+        "title": "keahlian"
+      },
+      "knowledge": {
+        "title": "pengetahuan",
+        "body": [
+          "Pemasaran",
+          "Manajemen Tim",
+          "Komunikasi",
+          "Pemecahan Masalah"
+        ]
+      }
+    }
+  }
+}

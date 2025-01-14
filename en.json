@@ -1,0 +1,181 @@
+{
+  "header": {
+    "name": "Annashrul Yusuf S.Tr,T",
+    "title": "Software Developer",
+    "downloadCV": "Download CV"
+  },
+  "menu": {
+    "home": "Home",
+    "aboutMe": "About Me",
+    "resume": "Resume",
+    "portofolio": "Portofolio"
+  },
+  "content": {
+    "aboutMe": {
+      "title": "About Me",
+      "body": "Assalamualaikum. My name is Annashrul, and I am a Software Developer with extensive experience in the industry since 2016. I have a strong creative drive and a high level of dedication to developing innovative and high-quality software solutions. Throughout my career, I have successfully completed various projects of different scales and complexities. My ability to solve problems, communicate effectively, and collaborate within teams has enabled me to achieve goals and exceed expectations. I possess expertise in multiple programming languages and am skilled in using various frameworks. Additionally, I have a broad knowledge of operating systems, databases, and software development principles. I am a quick learner and always eager to explore new things. I am confident that I can make a significant contribution to your team.",
+      "age": "Age",
+      "residence": "residence",
+      "address": "Address",
+      "email": "e-mail",
+      "phone": "phone"
+    },
+    "resume": {
+      "title": "Resume",
+      "experience": {
+        "title": "Experience",
+        "body": [
+          {
+            "title": "PT KALDUSARI NABATI",
+            "position": "Frontend Developer - onsite",
+            "periode": "Mei 2023 - current",
+            "desc": [
+              "Collaborated with other team members to identify and eliminate software bugs.",
+              "Worked across technical and design teams to develop innovative software applications.",
+              "Performed maintenance on several existing applications."
+            ]
+          },
+          {
+            "title": "PT NETINDO MEDIATAMA PERKASA",
+            "position": "Web Developer - remote",
+            "periode": "Des 2023 - Des 2024",
+            "desc": [
+              "Maintained Android and Web POS (Point of Sale) applications.",
+              "Configured settings for new clients using the POS (Point of Sale) system.",
+              "Developed APIs.",
+              "Integrated APIs into the frontend (web).",
+              "Deployed applications to Digital Ocean."
+            ]
+          },
+
+          {
+            "title": "PT TRIWIKRAMA",
+            "position": "Web Developer - remote",
+            "periode": "Jan - Jun 2023",
+            "desc": [
+              "Maintained HRIS applications.",
+              "Maintained ERP applications.",
+              "Developed APIs.",
+              "Integrated APIs into the frontend (web)."
+            ]
+          },
+          {
+            "title": "PT ELSPASIAL",
+            "position": "Web Developer - remote",
+            "periode": "Feb 2023 - Nov 2023",
+            "desc": [
+              "Maintained the TOYOTA Cooperative Application.",
+              "Maintained the TOYOTA Employee Shuttle Application.",
+              "Developed APIs.",
+              "Integrated APIs into the frontend (web)."
+            ]
+          },
+
+          {
+            "title": "PT LAYANAN CERDAS INDONESIA",
+            "position": "Web Developer - onsite",
+            "periode": "Jun 2022 - Mar 2023",
+            "desc": [
+              "Collaborated with other team members to identify and eliminate software bugs.",
+              "Worked across technical and design teams to develop innovative software applications.",
+              "Performed maintenance on several existing applications.",
+              "Designed databases.",
+              "Developed APIs.",
+              "Integrated APIs into the frontend (web).",
+              "Served as a logistics committee member for the T20 event."
+            ]
+          },
+
+          {
+            "title": "PT NETINDO MEDIATAMA PERKASA",
+            "position": "WEB & ANDROID DEVELOPER - onsite",
+            "periode": "Des 2018 - Jun 2022",
+            "desc": [
+              "Visited customers to perform maintenance.",
+              "Collaborated with other team members to identify and eliminate software bugs.",
+              "Worked across technical and design teams to develop innovative software applications.",
+              "Performed maintenance on several existing applications.",
+              "Explored programming languages to be applied in new projects.",
+              "Designed databases.",
+              "Developed APIs.",
+              "Integrated APIs into the frontend (web)."
+            ]
+          },
+          {
+            "title": "PT THAIBAH",
+            "position": "Fullstack Developer remote",
+            "periode": "Feb – Des 2018",
+            "desc": [
+              "Developed a Multi-Level Marketing web application.",
+              "Developed a Multi-Level Marketing Android application.",
+              "Maintained an inventory application.",
+              "Developed an application using React.js (frontend), Laravel (backend), and PostgreSQL (database)."
+            ]
+          },
+          {
+            "title": "PT AROMANIS SIMPING",
+            "position": "Fullstack Developer - remote",
+            "periode": "Des 2017 – Feb 2018",
+            "desc": [
+              "Developed an inventory application.",
+              "Maintained an inventory application.",
+              "Developed an application using React.js (frontend), Node.js (backend), and PostgreSQL (database).",
+              "Deployed applications to shared hosting.",
+              "Troubleshot hardware."
+            ]
+          },
+          {
+            "title": "FREELANCE",
+            "position": "Fullstack Developer - remote",
+            "periode": "Jan 2016 - Sekarang",
+            "desc": [
+              "Slicing UI.",
+              "Designed databases.",
+              "Designed APIs.",
+              "Integrated APIs with the frontend.",
+              "Configured servers.",
+              "Tech Stack: CodeIgniter, Laravel, React.js, Next.js, Vue.js, PHP Native, Node.js, Indexed DB, SQL Server, MySQL, PostgreSQL, Flutter, SQLite, Firebase, MongoDB, Server."
+            ]
+          }
+        ]
+      },
+      "education": {
+        "title": "education",
+        "body": [
+          {
+            "periode": "2015 - 2019",
+            "name": "TEDC BANDUNG POLYTECHNIC",
+            "major": "Information Technology"
+          },
+          {
+            "periode": "2012 - 2015",
+            "name": "SMK PGRI 3 CIMAHI",
+            "major": "Refrigeration & Air Conditioning Engineering"
+          },
+          {
+            "periode": "2009 - 2012",
+            "name": "SMPN 5 CIMAHI",
+            "major": ""
+          },
+          {
+            "periode": "2003 - 2009",
+            "name": "SDN PADASUKA MANDIRI II",
+            "major": ""
+          }
+        ]
+      },
+      "skill": {
+        "title": "skills"
+      },
+      "knowledge": {
+        "title": "knowledge",
+        "body": [
+          "Marketing",
+          "Team Management",
+          "Communication",
+          "Problem-Solving"
+        ]
+      }
+    }
+  }
+}

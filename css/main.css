@@ -6,6 +6,10 @@
 *{
     font-weight: 100 !important;
 }
+.menu-toggle, #language-select {
+  /* display: inline-block; */
+  /* vertical-align: middle; */
+}
 
 .clearfix:after,
 [class~="clearfix"]:before {
