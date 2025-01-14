@@ -102,7 +102,7 @@
             <li>
               <a href="#portfolio" class="nav-anim">
                 <span class="menu-icon lnr lnr-briefcase"></span>
-                <span class="link-text">Portfolio</span>
+                <span class="link-text">Portofolio</span>
               </a>
             </li>
           
@@ -387,41 +387,13 @@
     <script src="js/main.js"></script>
 
     <script>
-  
-      handleLanguage()
-      function handleLanguage(languange='en'){
-        fetch(`./${languange}.json`)
-            .then(response => response.json())
-            .then(data => {
-              console.log(data.content.resume)
-              document.querySelector('.header-titles h3').textContent = data.header.name;
-              document.querySelector('.header-titles h4').textContent = data.header.title;
-              document.querySelector('.header-buttons a').textContent = data.header.downloadCV;
-              document.querySelector('.main-menu .active .link-text').textContent = data.menu.home;
-              document.querySelector('.main-menu li:nth-child(2) .link-text').textContent = data.menu.aboutMe;
-              document.querySelector('.main-menu li:nth-child(3) .link-text').textContent = data.menu.resume;
-              document.querySelector('.main-menu li:nth-child(4) .link-text').textContent = data.menu.portofolio;
-              document.querySelector('.title-about-me').textContent = data.content.aboutMe.title;
-              document.querySelector('.body-about-me').textContent = data.content.aboutMe.body;
-              document.querySelector('.title-age').textContent = data.content.aboutMe.age;
-              document.querySelector('.title-residence').textContent = data.content.aboutMe.residence;
-              document.querySelector('.title-address').textContent = data.content.aboutMe.address;
-              document.querySelector('.title-email').textContent = data.content.aboutMe.email;
-              document.querySelector('.title-phone').textContent = data.content.aboutMe.phone;
-              document.querySelector('.title-resume').textContent = data.content.resume.title;
-              document.querySelector('.title-experience').textContent = data.content.resume.experience.title;
-              document.querySelector('.title-education').textContent = data.content.resume.education.title;
-              document.querySelector('.title-skill').textContent = data.content.resume.skill.title;
-              document.querySelector('.title-knowledge').textContent = data.content.resume.knowledge.title;
-              handleExperience(data.content.resume.experience.body)
-              handleEducation(data.content.resume.education.body)
-              handleKnowledge(data.content.resume.knowledge.body)
-            })
-            .catch(error => console.error('Error loading language file:', error));
-      }
-   
       
+     
       $(document).ready(function () {
+        handleLanguage()
+        handleAge();
+        handleSkill();
+        handlePortofolio();
         $(".popup-gallery").magnificPopup({
           delegate: "a",
           type: "image",
@@ -452,9 +424,37 @@
           },
         });
       });
-      handleAge();
-      handleSkill();
-      handlePortofolio();
+
+      function handleLanguage(languange='en'){
+        fetch(`./${languange}.json`)
+            .then(response => response.json())
+            .then(data => {
+              console.log(data.content.resume)
+              document.querySelector('.header-titles h3').textContent = data.header.name;
+              document.querySelector('.header-titles h4').textContent = data.header.title;
+              document.querySelector('.header-buttons a').textContent = data.header.downloadCV;
+              document.querySelector('.main-menu .active .link-text').textContent = data.menu.home;
+              document.querySelector('.main-menu li:nth-child(2) .link-text').textContent = data.menu.aboutMe;
+              document.querySelector('.main-menu li:nth-child(3) .link-text').textContent = data.menu.resume;
+              document.querySelector('.main-menu li:nth-child(4) .link-text').textContent = data.menu.portofolio;
+              document.querySelector('.title-about-me').textContent = data.content.aboutMe.title;
+              document.querySelector('.body-about-me').textContent = data.content.aboutMe.body;
+              document.querySelector('.title-age').textContent = data.content.aboutMe.age;
+              document.querySelector('.title-residence').textContent = data.content.aboutMe.residence;
+              document.querySelector('.title-address').textContent = data.content.aboutMe.address;
+              document.querySelector('.title-email').textContent = data.content.aboutMe.email;
+              document.querySelector('.title-phone').textContent = data.content.aboutMe.phone;
+              document.querySelector('.title-resume').textContent = data.content.resume.title;
+              document.querySelector('.title-experience').textContent = data.content.resume.experience.title;
+              document.querySelector('.title-education').textContent = data.content.resume.education.title;
+              document.querySelector('.title-skill').textContent = data.content.resume.skill.title;
+              document.querySelector('.title-knowledge').textContent = data.content.resume.knowledge.title;
+              handleExperience(data.content.resume.experience.body)
+              handleEducation(data.content.resume.education.body)
+              handleKnowledge(data.content.resume.knowledge.body)
+            })
+            .catch(error => console.error('Error loading language file:', error));
+      }
       function handleAge() {
         const birthDate = 1997;
         const currentYear = new Date().getFullYear();
