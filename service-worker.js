@@ -1,10 +1,10 @@
 const pathImg =
-  "https://raw.githubusercontent.com/annashrul/img-personal/main/";
+  "./img/";
 
 const imgWeb = `${pathImg}web/`;
 const imgMobile = `${pathImg}mobile/`;
 
-const CACHE_NAME = "cache-v2";
+const CACHE_NAME = "cache-v3";
 
 const urlsToCache = [
   "./index.html", // HTML

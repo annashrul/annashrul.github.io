@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Annashrul Yusuf - Resume</title>
-<meta name="google-site-verification" content="0KGb-3eDRyX2QxJWQby2Qg5Fu9Axd9eXBYm2UYWetts" />
+    <meta name="google-site-verification" content="0KGb-3eDRyX2QxJWQby2Qg5Fu9Axd9eXBYm2UYWetts" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, maximum-scale=1"
@@ -18,7 +18,7 @@
     <meta name="author" content="annashrul yusuf" />
     <link
       rel="shortcut icon"
-      href="https://raw.githubusercontent.com/annashrul/img-personal/main/favicon.ico"
+      href="./img/favicon.ico"
     />
 
     <link
@@ -68,7 +68,7 @@
           <div class="header-content">
             <div class="header-photo" style="margin-bottom: 20px !important">
               <img
-                src="https://raw.githubusercontent.com/annashrul/img-personal/main/web/me.PNG"
+                src="./img/web/me.PNG"
                 alt="Annashrul Yusuf S.Tr,T"
               />
             </div>
@@ -103,6 +103,7 @@
                 <span class="link-text">Portfolio</span>
               </a>
             </li>
+          
           </ul>
 
           <div class="social-links">
@@ -151,6 +152,7 @@
 
         <!-- Arrows Nav -->
         <div class="lmpixels-arrows-nav">
+         
           <div class="lmpixels-arrow-right">
             <i class="lnr lnr-chevron-right"></i>
           </div>
@@ -170,7 +172,7 @@
                     <div class="title-block">
                       <div class="header-photo">
                         <img
-                          src="https://raw.githubusercontent.com/annashrul/img-personal/main/web/me.PNG"
+                          src="./img/web/me.PNG"
                           alt="Annashrul Yusuf S.Tr,T"
                         />
                       </div>
@@ -467,12 +469,12 @@
           {
             language: "CSS",
             variant:
-              "BOOTSTRAP, TAILWIND, MATERIAL DESIGN, ANT DESIGN, SEMANTIC UI, BULMA",
+              "BOOTSTRAP, TAILWIND, MATERIAL DESIGN, ANT DESIGN, SEMANTIC UI, BULMA, SHADCN",
           },
           {
             language: "JAVASCRIPT",
             variant:
-              "NODE JS,EXPRESS JS, ADONIS JS, REACT JS, NEXT JS, JQUERY, VUE JS",
+              "NODE JS,EXPRESS JS, ADONIS JS, REACT JS, NEXT JS, JQUERY, VUE JS, SVELTE",
           },
           { language: "PHP", variant: "CODEIGNITER, LARAVEL, YII,  NATIVE" },
           { language: "DART", variant: "FLUTTER" },
@@ -651,12 +653,24 @@
         const categoryWeb = "&quot;category_web&quot;";
         const categoryAndroid = "&quot;category_android&quot;";
         const pathImg =
-          "https://raw.githubusercontent.com/annashrul/img-personal/main/";
+          "./img/";
 
         const imgWeb = `${pathImg}web/`;
         const imgMobile = `${pathImg}mobile/`;
         const portofolio = [
           {
+            category: `[${categoryAll}, ${categoryWeb}]`,
+            images: `${imgWeb}ikopin-dashboard.png`,
+            title: "Ikopin",
+            link: "",
+          },
+           {
+            category: `[${categoryAll}, ${categoryWeb}]`,
+            images: `${imgWeb}sangkanjaya-login.png`,
+            title: "Sangkan Jaya",
+            link: "",
+          },
+           {
             category: `[${categoryAll}, ${categoryWeb}]`,
             images: `${imgWeb}nams.png`,
             title: "Nabati Approval System Management",
