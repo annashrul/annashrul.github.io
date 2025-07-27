@@ -93,18 +93,65 @@ const urlsToCache = [
   `${imgMobile}nshop.jpeg`,
 ];
 
+// Instalasi service worker: cache semua file awal
 self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
       return cache.addAll(urlsToCache);
     })
   );
+  self.skipWaiting(); // aktifkan SW segera tanpa menunggu reload
 });
 
+// Aktivasi service worker: hapus cache lama
+self.addEventListener("activate", (event) => {
+  event.waitUntil(
+    caches
+      .keys()
+      .then((cacheNames) =>
+        Promise.all(
+          cacheNames
+            .filter((name) => name !== CACHE_NAME)
+            .map((name) => caches.delete(name))
+        )
+      )
+  );
+  self.clients.claim(); // aktifkan kontrol untuk semua tab
+});
+
+// Fetch: cache-first, jika tidak ada baru ambil dari network dan cache
 self.addEventListener("fetch", (event) => {
+  if (event.request.method !== "GET") return;
+
   event.respondWith(
-    caches.match(event.request).then((response) => {
-      return response || fetch(event.request);
+    caches.match(event.request).then((cachedResponse) => {
+      if (cachedResponse) {
+        return cachedResponse; // jika ada di cache, ambil dari cache
+      }
+
+      return fetch(event.request)
+        .then((networkResponse) => {
+          // Jika response valid, simpan ke cache
+          if (
+            networkResponse &&
+            networkResponse.status === 200 &&
+            networkResponse.type === "basic" &&
+            event.request.url.startsWith("http")
+          ) {
+            const clonedResponse = networkResponse.clone();
+            caches.open(CACHE_NAME).then((cache) => {
+              cache.put(event.request, clonedResponse);
+            });
+          }
+
+          return networkResponse;
+        })
+        .catch(() => {
+          // Jika offline dan request HTML, fallback ke index.html
+          if (event.request.destination === "document") {
+            return caches.match("./index.html");
+          }
+        });
     })
   );
 });

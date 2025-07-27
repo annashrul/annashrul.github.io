@@ -79,7 +79,7 @@
       <header id="site_header" class="header mobile-menu-hide">
         <div class="header-content">
           <div class="header-photo" style="margin-bottom: 20px !important">
-            <img src="./img/me.PNG" alt="Annashrul Yusuf S.Tr,T" />
+            <img loading="lazy" src="./img/me.PNG" alt="Annashrul Yusuf S.Tr,T" />
           </div>
           <div class="header-titles">
             <h3>Annashrul Yusuf S.Tr,T</h3>
@@ -217,7 +217,7 @@
                 <div class="col-sm-12 col-md-12 col-lg-12">
                   <div class="title-block">
                     <div class="header-photo">
-                      <img src="./img/me.PNG" alt="Annashrul Yusuf S.Tr,T" />
+                      <img loading="lazy" src="./img/me.PNG" alt="Annashrul Yusuf S.Tr,T" />
                     </div>
                     <h2>Annashrul Yusuf S.Tr,T</h2>
                     <div class="owl-carousel text-rotation">
@@ -977,7 +977,7 @@
         html += `
                 <figure class="item lbimage" data-groups='${res.category}'>
                     <div class="portfolio-item-img">
-                        <img src="${res.images}" alt="${res.title}" title="${res.title}"/>
+                        <img loading="lazy" src="${res.images}" alt="${res.title}" title="${res.title}"/>
                         <a class="lightbox" link="${res.link}" title="${res.title}" href="${res.images}"></a>
                     </div>
                     <i class="far fa-image"></i>
@@ -989,15 +989,16 @@
       $("#portofolio-section").html(html);
     }
     if ("serviceWorker" in navigator) {
-      navigator.serviceWorker.register("/service-worker.js").then(() => {
-        console.log("Service Worker Registered");
+      window.addEventListener("load", function () {
+        navigator.serviceWorker
+          .register("./service-worker.js")
+          .then((reg) => console.log("Service Worker registered:", reg.scope))
+          .catch((err) => console.log("SW registration failed:", err));
       });
     }
-    if ("serviceWorker" in navigator) {
-      navigator.serviceWorker.register("/service-worker.js").then(() => {
-        console.log("Service Worker Registered");
-      });
-    }
+
+
+
   </script>
 </body>
 
