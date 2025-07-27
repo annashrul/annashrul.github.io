@@ -26,10 +26,54 @@
     * {
       text-transform: uppercase !important;
     }
+
+    .dot-loading span {
+      animation: blink 1.5s infinite;
+      opacity: 0.2;
+    }
+
+    .dot-loading span:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .dot-loading span:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+
+    .dot-loading span:nth-child(4) {
+      animation-delay: 0.6s;
+    }
+
+    @keyframes blink {
+      50% {
+        opacity: 1;
+      }
+    }
+
+    .dot-loading {
+      font-size: 24px;
+      font-weight: bold;
+      font-family: sans-serif;
+    }
   </style>
 </head>
 
 <body>
+  <div id="loadingScreen" style="
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+">
+    <span class="dot-loading">Loading<span>.</span><span>.</span><span>.</span></span>
+  </div>
+
   <div class="page">
     <div class="page-content">
       <header id="site_header" class="header mobile-menu-hide">
@@ -349,6 +393,26 @@
   <script src="js/main.js"></script>
 
   <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        const loadingScreen = document.getElementById('loadingScreen');
+
+        navigator.serviceWorker.register('./sw.js').then((registration) => {
+          let sw = registration.installing || registration.waiting || registration.active;
+          if (sw && sw.state !== 'activated') {
+            sw.addEventListener('statechange', (e) => {
+              if (e.target.state === 'activated') {
+                loadingScreen.style.display = 'none';
+              }
+            });
+          } else {
+            loadingScreen.style.display = 'none';
+          }
+        });
+      });
+    } else {
+      document.getElementById('loadingScreen').style.display = 'none';
+    }
     $(document).ready(function () {
       handleLanguage();
       handleAge();
