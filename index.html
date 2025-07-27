@@ -389,7 +389,7 @@
       fetch(`./${languange}.json`)
         .then((response) => response.json())
         .then((data) => {
-          document.getElementById("downloadCvBtn").href = `file/cv=${languange}.pdf`;
+          document.getElementById("downloadCvBtn").href = `file/cv-${languange}.pdf`;
 
           console.log(data.content.resume);
           document.querySelector(".header-titles h3").textContent =
