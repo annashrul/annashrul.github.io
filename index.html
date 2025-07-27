@@ -55,6 +55,35 @@
       font-weight: bold;
       font-family: sans-serif;
     }
+
+    .dot-loading span {
+      animation: blink 1s infinite;
+      animation-delay: calc(var(--i) * 0.2s);
+    }
+
+    .dot-loading span:nth-child(1) {
+      --i: 0;
+    }
+
+    .dot-loading span:nth-child(2) {
+      --i: 1;
+    }
+
+    .dot-loading span:nth-child(3) {
+      --i: 2;
+    }
+
+    @keyframes blink {
+
+      0%,
+      100% {
+        opacity: 0;
+      }
+
+      50% {
+        opacity: 1;
+      }
+    }
   </style>
 </head>
 
@@ -393,26 +422,33 @@
   <script src="js/main.js"></script>
 
   <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        const loadingScreen = document.getElementById('loadingScreen');
+    window.addEventListener("load", () => {
+      const loadingScreen = document.getElementById("loadingScreen");
 
-        navigator.serviceWorker.register('./service-worker.js').then((registration) => {
-          let sw = registration.installing || registration.waiting || registration.active;
-          if (sw && sw.state !== 'activated') {
-            sw.addEventListener('statechange', (e) => {
-              if (e.target.state === 'activated') {
-                loadingScreen.style.display = 'none';
-              }
-            });
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistration().then((registration) => {
+          if (registration) {
+            // Service Worker sudah terdaftar
+            loadingScreen.style.display = "none";
           } else {
-            loadingScreen.style.display = 'none';
+            // Belum terdaftar → tampilkan loading
+            loadingScreen.style.display = "flex";
+            navigator.serviceWorker.register("/service-worker.js")
+              .then(() => {
+                // Pendaftaran sukses → sembunyikan loading
+                loadingScreen.style.display = "none";
+              })
+              .catch((error) => {
+                console.error("Service Worker registration failed:", error);
+                loadingScreen.style.display = "none"; // Tetap disembunyikan agar tidak freeze
+              });
           }
         });
-      });
-    } else {
-      document.getElementById('loadingScreen').style.display = 'none';
-    }
+      } else {
+        // Browser tidak mendukung Service Worker
+        loadingScreen.style.display = "none";
+      }
+    });
     $(document).ready(function () {
       handleLanguage();
       handleAge();
