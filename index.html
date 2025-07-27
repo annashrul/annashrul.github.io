@@ -88,7 +88,8 @@
         </div>
 
         <div class="header-buttons">
-          <a href="file/cv.pdf" target="_blank" class="btn btn-primary">Download CV</a>
+          <a id="downloadCvBtn" target="_blank" class="btn btn-primary">Download CV</a>
+
         </div>
 
         <!--      <div class="copyrights">© 2020 All rights reserved.</div>-->
@@ -388,6 +389,8 @@
       fetch(`./${languange}.json`)
         .then((response) => response.json())
         .then((data) => {
+          document.getElementById("downloadCvBtn").href = `file/cv=${languange}.pdf`;
+
           console.log(data.content.resume);
           document.querySelector(".header-titles h3").textContent =
             data.header.name;
