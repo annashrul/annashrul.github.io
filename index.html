@@ -397,7 +397,7 @@
       window.addEventListener('load', () => {
         const loadingScreen = document.getElementById('loadingScreen');
 
-        navigator.serviceWorker.register('./sw.js').then((registration) => {
+        navigator.serviceWorker.register('./service-worker.js').then((registration) => {
           let sw = registration.installing || registration.waiting || registration.active;
           if (sw && sw.state !== 'activated') {
             sw.addEventListener('statechange', (e) => {
