@@ -8,7 +8,7 @@
     "home": "Home",
     "aboutMe": "About Me",
     "resume": "Resume",
-    "portofolio": "Portofolio"
+    "portofolio": "Portfolio"
   },
   "content": {
     "aboutMe": {
@@ -47,7 +47,6 @@
               "Deployed applications to Digital Ocean."
             ]
           },
-
           {
             "title": "PT TRIWIKRAMA",
             "position": "Web Developer - remote",
@@ -70,7 +69,6 @@
               "Integrated APIs into the frontend (web)."
             ]
           },
-
           {
             "title": "PT LAYANAN CERDAS INDONESIA",
             "position": "Web Developer - onsite",
@@ -85,7 +83,6 @@
               "Served as a logistics committee member for the T20 event."
             ]
           },
-
           {
             "title": "PT NETINDO MEDIATAMA PERKASA",
             "position": "WEB & ANDROID DEVELOPER - onsite",

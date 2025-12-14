@@ -23,84 +23,111 @@
 
   <script src="js/modernizr.custom.js"></script>
   <style>
-    * {
-      text-transform: uppercase !important;
+    :root {
+      --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --bg-dark: #0f0f23;
+      --bg-card: rgba(30, 30, 60, 0.8);
+      --text-primary: #f0f0f5;
+      --text-secondary: #a0a0c0;
+      --accent: #667eea;
     }
 
-    .dot-loading span {
-      animation: blink 1.5s infinite;
-      opacity: 0.2;
+    .loading-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--bg-dark);
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
     }
 
-    .dot-loading span:nth-child(2) {
-      animation-delay: 0.2s;
+    .loading-screen.hidden {
+      opacity: 0;
+      visibility: hidden;
     }
 
-    .dot-loading span:nth-child(3) {
-      animation-delay: 0.4s;
+    .loader {
+      width: 50px;
+      height: 50px;
+      border: 3px solid rgba(102, 126, 234, 0.2);
+      border-top-color: #667eea;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
     }
 
-    .dot-loading span:nth-child(4) {
-      animation-delay: 0.6s;
+    .loading-text {
+      margin-top: 20px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+      color: var(--text-secondary);
+      letter-spacing: 2px;
     }
 
-    @keyframes blink {
-      50% {
-        opacity: 1;
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
       }
     }
 
-    .dot-loading {
-      font-size: 24px;
-      font-weight: bold;
-      font-family: sans-serif;
+    /* Override body background to match dark theme */
+    body {
+      background-color: #1a1a2e !important;
     }
 
-    .dot-loading span {
-      animation: blink 1s infinite;
-      animation-delay: calc(var(--i) * 0.2s);
+    /* Make sidebar menu match dark theme */
+    ul.main-menu {
+      background-color: #1a1a2e !important;
     }
 
-    .dot-loading span:nth-child(1) {
-      --i: 0;
+    /* Toggle Icon Styles */
+    .toggle-icon {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 15px;
+      align-items: center;
     }
 
-    .dot-loading span:nth-child(2) {
-      --i: 1;
+    .toggle-icon svg {
+      width: 35px;
+      height: 24px;
+      border-radius: 4px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border 0.2s ease;
+      border: 2px solid transparent;
+      cursor: pointer;
     }
 
-    .dot-loading span:nth-child(3) {
-      --i: 2;
+    .toggle-icon svg:hover {
+      transform: scale(1.1);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     }
 
-    @keyframes blink {
+    .toggle-icon svg.active {
+      border: 2px solid #667eea;
+      box-shadow: 0 0 10px rgba(102, 126, 234, 0.5);
+    }
 
-      0%,
-      100% {
-        opacity: 0;
+    /* Mobile responsive - center flags like nav arrows */
+    @media (max-width: 1200px) {
+      .lmpixels-arrows-nav .toggle-icon {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
       }
-
-      50% {
-        opacity: 1;
-      }
-    }
   </style>
 </head>
 
 <body>
-  <div id="loadingScreen" style="
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: white;
-  z-index: 9999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-">
-    <span class="dot-loading">Loading<span>.</span><span>.</span><span>.</span></span>
+  <div id="loadingScreen" class="loading-screen">
+    <div class="loader"></div>
+    <span class="loading-text">Loading</span>
   </div>
 
   <div class="page">
@@ -180,8 +207,8 @@
       <!-- Arrows Nav -->
       <div class="lmpixels-arrows-nav">
         <div class="toggle-icon">
-          <svg title="England" style="cursor: pointer" onclick="handleLanguage('en')" version="1.1" id="Layer_1"
-            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          <svg title="England" class="active" id="flag-en" style="cursor: pointer" onclick="handleLanguage('en')"
+            version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
             viewBox="0 0 55.2 38.4" style="enable-background: new 0 0 55.2 38.4" xml:space="preserve">
             <style type="text/css">
               .st0 {
@@ -215,7 +242,7 @@
               <polygon class="st1" points="44.63,25.59 40.37,25.59 55.2,33.02 55.2,30.88 44.63,25.59" />
             </g>
           </svg>
-          <svg title="Indonesia" style="cursor: pointer" onclick="handleLanguage('id')"
+          <svg title="Indonesia" id="flag-id" style="cursor: pointer" onclick="handleLanguage('id')"
             xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision" text-rendering="geometricPrecision"
             image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 512 356.79">
             <g fill-rule="nonzero">
@@ -425,28 +452,31 @@
     window.addEventListener("load", () => {
       const loadingScreen = document.getElementById("loadingScreen");
 
+      // Function to hide loading with animation
+      const hideLoading = () => {
+        loadingScreen.classList.add("hidden");
+      };
+
       if ('serviceWorker' in navigator) {
         navigator.serviceWorker.getRegistration().then((registration) => {
           if (registration) {
             // Service Worker sudah terdaftar
-            loadingScreen.style.display = "none";
+            hideLoading();
           } else {
-            // Belum terdaftar → tampilkan loading
-            loadingScreen.style.display = "flex";
+            // Belum terdaftar → register then hide
             navigator.serviceWorker.register("/service-worker.js")
               .then(() => {
-                // Pendaftaran sukses → sembunyikan loading
-                loadingScreen.style.display = "none";
+                hideLoading();
               })
               .catch((error) => {
                 console.error("Service Worker registration failed:", error);
-                loadingScreen.style.display = "none"; // Tetap disembunyikan agar tidak freeze
+                hideLoading();
               });
           }
         });
       } else {
         // Browser tidak mendukung Service Worker
-        loadingScreen.style.display = "none";
+        hideLoading();
       }
     });
     $(document).ready(function () {
@@ -486,6 +516,20 @@
     });
 
     function handleLanguage(languange = "en") {
+      // Toggle active class on flags
+      const flagEn = document.getElementById('flag-en');
+      const flagId = document.getElementById('flag-id');
+
+      if (flagEn && flagId) {
+        flagEn.classList.remove('active');
+        flagId.classList.remove('active');
+        if (languange === 'en') {
+          flagEn.classList.add('active');
+        } else {
+          flagId.classList.add('active');
+        }
+      }
+
       fetch(`./${languange}.json`)
         .then((response) => response.json())
         .then((data) => {
@@ -635,6 +679,18 @@
       const imgWeb = `${pathImg}web/`;
       const imgMobile = `${pathImg}mobile/`;
       const portofolio = [
+        {
+          category: `[${categoryAll}, ${categoryWeb}]`,
+          images: `${imgWeb}neema.png`,
+          title: "Aplikasi Pelayanan",
+          link: "https://neema.asia",
+        },
+        {
+          category: `[${categoryAll}, ${categoryWeb}]`,
+          images: `${imgWeb}presensy.png`,
+          title: "Aplikasi HC Portal",
+          link: "https://admin.development.presensy.site/",
+        },
         {
           category: `[${categoryAll}, ${categoryWeb}]`,
           images: `${imgWeb}tokped.png`,
