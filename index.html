@@ -532,10 +532,19 @@
             });
         };
 
-        fetch('./version.json?ts=' + Date.now())
-          .then((res) => res.json())
-          .then((data) => registerSW(data.version))
-          .catch(() => registerSW());
+        const resolveVersion = () => {
+          return fetch('https://api.github.com/repos/annashrul/annashrul.github.io/commits/main?ts=' + Date.now())
+            .then((res) => res.ok ? res.json() : Promise.reject())
+            .then((data) => data.sha)
+            .catch(() =>
+              fetch('./version.json?ts=' + Date.now())
+                .then((res) => res.ok ? res.json() : Promise.reject())
+                .then((data) => data.version)
+            )
+            .catch(() => null);
+        };
+
+        resolveVersion().then(registerSW);
       } else {
         hideLoading();
       }
