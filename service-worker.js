@@ -3,7 +3,7 @@ const pathImg = "./img/";
 const imgWeb = `${pathImg}web/`;
 const imgMobile = `${pathImg}mobile/`;
 
-const CACHE_NAME = "cache-v3";
+const CACHE_NAME = "cache-v4";
 
 const urlsToCache = [
   "./index.html", // HTML
@@ -74,6 +74,9 @@ const urlsToCache = [
   `${imgWeb}tomas.png`,
   `${imgWeb}travelEkan.png`,
   `${imgWeb}tripisia.png`,
+  `${imgWeb}neema.png`,
+  `${imgWeb}presensy.png`,
+
   `${imgMobile}1.jpeg`,
   `${imgMobile}2.jpeg`,
   `${imgMobile}4.jpeg`,
@@ -123,35 +126,44 @@ self.addEventListener("activate", (event) => {
 self.addEventListener("fetch", (event) => {
   if (event.request.method !== "GET") return;
 
-  event.respondWith(
-    caches.match(event.request).then((cachedResponse) => {
-      if (cachedResponse) {
-        return cachedResponse; // jika ada di cache, ambil dari cache
-      }
-
-      return fetch(event.request)
-        .then((networkResponse) => {
-          // Jika response valid, simpan ke cache
-          if (
-            networkResponse &&
-            networkResponse.status === 200 &&
-            networkResponse.type === "basic" &&
-            event.request.url.startsWith("http")
-          ) {
-            const clonedResponse = networkResponse.clone();
-            caches.open(CACHE_NAME).then((cache) => {
-              cache.put(event.request, clonedResponse);
-            });
-          }
-
-          return networkResponse;
+  const isHTML =
+    event.request.mode === "navigate" ||
+    event.request.destination === "document";
+  if (isHTML) {
+    event.respondWith(
+      fetch(event.request, { cache: "no-store" })
+        .then((response) => {
+          const clone = response.clone();
+          caches.open(CACHE_NAME).then((cache) => {
+            cache.put("./index.html", clone);
+          });
+          return response;
         })
-        .catch(() => {
-          // Jika offline dan request HTML, fallback ke index.html
-          if (event.request.destination === "document") {
-            return caches.match("./index.html");
-          }
-        });
-    })
+        .catch(() => caches.match("./index.html"))
+    );
+    return;
+  }
+
+  const isStatic = ["script", "style", "image", "font"].includes(
+    event.request.destination
+  );
+  event.respondWith(
+    caches.open(CACHE_NAME).then((cache) =>
+      cache.match(event.request).then((cached) => {
+        const fetchPromise = fetch(event.request)
+          .then((network) => {
+            if (
+              network &&
+              network.status === 200 &&
+              event.request.url.startsWith("http")
+            ) {
+              cache.put(event.request, network.clone());
+            }
+            return network;
+          })
+          .catch(() => cached);
+        return cached || fetchPromise;
+      })
+    )
   );
 });

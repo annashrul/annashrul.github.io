@@ -11,22 +11,32 @@
     function portfolio_init() {
         var portfolio_grid = $('.portfolio-grid'),
             portfolio_filter = $('.portfolio-filters');
-            
-        if (portfolio_grid) {
 
-            portfolio_grid.shuffle({
-                speed: 450,
-                itemSelector: 'figure'
+        if (portfolio_grid.length) {
+            portfolio_grid.masonry({
+                itemSelector: 'figure',
+                percentPosition: true
             });
 
             portfolio_filter.on("click", ".filter", function (e) {
-                portfolio_grid.shuffle('update');
                 e.preventDefault();
                 $('.portfolio-filters .filter').parent().removeClass('active');
                 $(this).parent().addClass('active');
-                portfolio_grid.shuffle('shuffle', $(this).attr('data-group') );
-            });
+                var group = $(this).attr('data-group');
 
+                portfolio_grid.find('figure').each(function () {
+                    var groupsAttr = $(this).attr('data-groups');
+                    var groups = [];
+                    if (groupsAttr) {
+                        try { groups = JSON.parse(groupsAttr); } catch (err) {}
+                    }
+                    var visible = group === 'category_all' || (groups && groups.indexOf(group) !== -1);
+                    $(this).toggle(visible);
+                });
+
+                portfolio_grid.masonry('reloadItems');
+                portfolio_grid.masonry('layout');
+            });
         }
     }
     // /Portfolio subpage filters

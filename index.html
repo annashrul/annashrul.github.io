@@ -514,24 +514,29 @@
       };
 
       if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.getRegistration().then((registration) => {
-          if (registration) {
-            // Service Worker sudah terdaftar
-            hideLoading();
-          } else {
-            // Belum terdaftar → register then hide
-            navigator.serviceWorker.register("/service-worker.js")
-              .then(() => {
-                hideLoading();
-              })
-              .catch((error) => {
-                console.error("Service Worker registration failed:", error);
-                hideLoading();
+        const registerSW = (version) => {
+          const swUrl = version ? `./service-worker.js?v=${version}` : './service-worker.js';
+          navigator.serviceWorker.register(swUrl, { updateViaCache: 'none' })
+            .then(() => {
+              hideLoading();
+              let refreshing = false;
+              navigator.serviceWorker.addEventListener('controllerchange', () => {
+                if (refreshing) return;
+                refreshing = true;
+                window.location.reload();
               });
-          }
-        });
+            })
+            .catch((error) => {
+              console.error('Service Worker registration failed:', error);
+              hideLoading();
+            });
+        };
+
+        fetch('./version.json?ts=' + Date.now())
+          .then((res) => res.json())
+          .then((data) => registerSW(data.version))
+          .catch(() => registerSW());
       } else {
-        // Browser tidak mendukung Service Worker
         hideLoading();
       }
     });
@@ -673,7 +678,7 @@
         {
           language: "JAVASCRIPT",
           variant:
-            "NODE JS,EXPRESS JS, ADONIS JS, REACT JS, NEXT JS, JQUERY, VUE JS, SVELTE",
+            "NODE JS,EXPRESS JS, ADONIS JS, REACT JS, NEXT JS, JQUERY, VUE JS, SVELTE, REACT NATIVE",
         },
         { language: "PHP", variant: "CODEIGNITER, LARAVEL, YII,  NATIVE" },
         { language: "DART", variant: "FLUTTER" },
@@ -1136,14 +1141,7 @@
       });
       $("#portofolio-section").html(html);
     }
-    if ("serviceWorker" in navigator) {
-      window.addEventListener("load", function () {
-        navigator.serviceWorker
-          .register("./service-worker.js")
-          .then((reg) => console.log("Service Worker registered:", reg.scope))
-          .catch((err) => console.log("SW registration failed:", err));
-      });
-    }
+    
 
 
 
