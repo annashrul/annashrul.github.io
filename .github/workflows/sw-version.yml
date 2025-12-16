@@ -5,25 +5,43 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write
+
 jobs:
   bump-version:
+    if: ${{ github.actor != 'github-actions[bot]' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 0
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
 
       - name: Write version.json
         run: |
           echo "{\"version\":\"${{ github.sha }}\",\"date\":\"$(date -u +'%Y-%m-%dT%H:%M:%SZ')\"}" > version.json
 
+      - name: Rebase main
+        run: |
+          git fetch origin ${{ github.ref_name }}
+          git checkout ${{ github.ref_name }}
+          git rebase origin/${{ github.ref_name }} || git pull --rebase
+
       - name: Commit & push
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          set -e
           git add version.json
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
             git commit -m "chore: update version.json to ${{ github.sha }}"
-            git push
+            git push origin HEAD:${{ github.ref_name }}
           fi
