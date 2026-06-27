@@ -1305,23 +1305,18 @@
       }
 
       .grid {
-        display: flex;
-        align-items: flex-start;
-        gap: 1.2rem;
-      }
-
-      .gcol {
-        flex: 1 1 0;
-        min-width: 0;
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        align-items: stretch;
         gap: 1.2rem;
       }
 
       .card {
         position: relative;
-        display: block;
+        display: flex;
+        flex-direction: column;
         width: 100%;
+        height: 100%;
         margin: 0;
         border: 1px solid var(--line-soft);
         border-radius: 14px;
@@ -1344,12 +1339,13 @@
         position: relative;
         overflow: hidden;
         background: linear-gradient(135deg, var(--paper-edge), var(--paper-2));
-        min-height: 120px;
+        aspect-ratio: 16 / 10;
       }
 
       .card .thumb img {
         width: 100%;
-        height: auto;
+        height: 100%;
+        object-fit: cover;
         display: block;
         transition:
           transform 0.7s var(--ease),
@@ -1447,6 +1443,9 @@
 
       .card .meta2 {
         padding: 0.8rem 0.85rem 0.95rem;
+        display: flex;
+        flex: 1;
+        flex-direction: column;
       }
 
       .card .meta2 h3 {
@@ -1454,8 +1453,13 @@
         font-size: 0.82rem;
         font-weight: 600;
         line-height: 1.4;
+        min-height: 2.8em;
         letter-spacing: 0;
         color: var(--ink);
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
       }
 
       .card .meta2 .desc {
@@ -1463,6 +1467,7 @@
         color: var(--ink-soft);
         margin-top: 0.3rem;
         line-height: 1.5;
+        min-height: 3em;
         display: -webkit-box;
         -webkit-line-clamp: 2;
         -webkit-box-orient: vertical;
@@ -1473,7 +1478,8 @@
         font-family: var(--font-mono);
         font-size: 0.68rem;
         color: var(--ink-faint);
-        margin-top: 0.45rem;
+        margin-top: auto;
+        padding-top: 0.45rem;
         display: flex;
         align-items: center;
         gap: 0.3rem;
@@ -1492,6 +1498,29 @@
         color: var(--ink-faint);
         font-family: var(--font-mono);
         font-size: 0.85rem;
+      }
+
+      .more-sentinel {
+        height: 1px;
+        width: 100%;
+      }
+
+      .more-spin {
+        display: none;
+        justify-content: center;
+        padding: 1.6rem 0 0.4rem;
+        color: var(--ink-faint);
+      }
+
+      .more-spin.on {
+        display: flex;
+      }
+
+      .more-spin i {
+        width: 22px;
+        height: 22px;
+        animation: spin 1.1s linear infinite;
+        color: var(--accent);
       }
 
       /* ===== LIGHTBOX ===== */
@@ -2594,6 +2623,10 @@
           grid-template-columns: 1fr 1fr;
           gap: 0 3rem;
         }
+
+        .grid {
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
       }
 
       @media (min-width: 640px) and (max-width: 1023px) {
@@ -2644,6 +2677,10 @@
         .edu-grid {
           grid-template-columns: 1fr 1fr;
           gap: 0 2rem;
+        }
+
+        .grid {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
         }
 
         .utility {
@@ -2756,10 +2793,6 @@
         }
 
         .grid {
-          gap: 0.85rem;
-        }
-
-        .gcol {
           gap: 0.85rem;
         }
 
@@ -3471,6 +3504,10 @@
               </div>
             </div>
             <div class="grid" id="grid"></div>
+            <div class="more-spin" id="moreSpin">
+              <i data-lucide="loader"></i>
+            </div>
+            <div class="more-sentinel" id="moreSentinel"></div>
             <div class="empty" id="empty" hidden data-t="w_empty">
               Nothing here in this category yet.
             </div>
@@ -3857,8 +3894,8 @@
         },
       };
       const CV = {
-        en: "https://annashrul.github.io/file/cv-en.pdf",
-        id: "https://annashrul.github.io/file/cv-id.pdf",
+        en: "https://annashrul.github.io/cv-en.pdf",
+        id: "https://annashrul.github.io/cv-id.pdf",
       };
       let lang = (navigator.language || "en").toLowerCase().startsWith("id")
         ? "id"
@@ -4514,8 +4551,11 @@
           imgs: [W + "sangqu.webp"],
         },
       ];
+
       const grid = document.getElementById("grid"),
-        empty = document.getElementById("empty");
+        empty = document.getElementById("empty"),
+        moreSpin = document.getElementById("moreSpin"),
+        moreSentinel = document.getElementById("moreSentinel");
       function host(u) {
         try {
           return new URL(u).hostname.replace(/^www\./, "");
@@ -4527,6 +4567,9 @@
         return (p.d && (p.d[lang] || p.d.en)) || "";
       }
       let shown = [];
+      /* ===== Image cache: once a src has decoded, never refetch or re-fade it.
+   On re-render (filter/lang switch) cached images snap straight to visible. ===== */
+      const IMG_CACHE = new Set();
       function card(p, idx) {
         const has = !!p.l;
         const multi = p.imgs.length > 1;
@@ -4534,7 +4577,7 @@
         el.className = "card " + p.c;
         el.tabIndex = 0;
         el.dataset.idx = idx;
-        el.innerHTML = `<div class="thumb"><div class="ph"><i data-lucide="${p.c === "mobile" ? "smartphone" : "monitor"}"></i></div><img loading="lazy" alt="${p.t}" data-src="${p.imgs[0]}"><span class="zoom"><i data-lucide="expand"></i></span><span class="cat">${p.c}</span>${multi ? `<span class="gal"><i data-lucide="images"></i>${p.imgs.length}</span>` : ""}</div><div class="meta2"><h3>${p.t}</h3><div class="desc">${descOf(p)}</div><div class="dom ${has ? "" : "soon"}">${has ? '<i data-lucide="link" style="width:11px;height:11px"></i>' + host(p.l) : lang === "id" ? "studi kasus nyusul" : "case study soon"}</div></div>`;
+        el.innerHTML = `<div class="thumb"><div class="ph"><i data-lucide="${p.c === "mobile" ? "smartphone" : "monitor"}"></i></div><img loading="lazy" decoding="async" alt="${p.t}" data-src="${p.imgs[0]}"><span class="zoom"><i data-lucide="expand"></i></span><span class="cat">${p.c}</span>${multi ? `<span class="gal"><i data-lucide="images"></i>${p.imgs.length}</span>` : ""}</div><div class="meta2"><h3>${p.t}</h3><div class="desc">${descOf(p)}</div><div class="dom ${has ? "" : "soon"}">${has ? '<i data-lucide="link" style="width:11px;height:11px"></i>' + host(p.l) : lang === "id" ? "studi kasus nyusul" : "case study soon"}</div></div>`;
         el.addEventListener("click", () => openLB(idx, 0));
         el.addEventListener("keydown", (e) => {
           if (e.key === "Enter" || e.key === " ") {
@@ -4545,26 +4588,67 @@
         return el;
       }
       let curFilter = "all";
-      function colCount() {
-        return window.innerWidth >= 1024 ? 4 : window.innerWidth >= 640 ? 3 : 2;
+      let cardEls = [];
+
+      let layoutT;
+      function scheduleLayout() {
+        clearTimeout(layoutT);
+        layoutT = setTimeout(() => {}, 120);
       }
-      let lastCols = 0;
-      function renderGrid() {
-        grid.innerHTML = "";
-        shown = ITEMS.filter((p) => curFilter === "all" || p.c === curFilter);
-        const cols = colCount();
-        lastCols = cols;
-        const colEls = [];
-        for (let c = 0; c < cols; c++) {
-          const d = document.createElement("div");
-          d.className = "gcol";
-          grid.appendChild(d);
-          colEls.push(d);
+
+      /* ===== Infinite scroll: render cards in batches, append more as you near the bottom ===== */
+      const BATCH = 12;
+      let rendered = 0;
+      const workInner = document.querySelector(".pg.work .pg-inner");
+      function appendBatch() {
+        if (rendered >= shown.length) {
+          moreSpin.classList.remove("on");
+          return;
         }
-        shown.forEach((p, i) => colEls[i % cols].appendChild(card(p, i)));
-        empty.hidden = shown.length > 0;
+        const slice = shown.slice(rendered, rendered + BATCH);
+        slice.forEach((p, i) => {
+          const el = card(p, rendered + i);
+          cardEls.push(el);
+          grid.appendChild(el);
+        });
+        rendered += slice.length;
         if (window.lucide) lucide.createIcons();
         observeImgs();
+        moreSpin.classList.toggle("on", rendered < shown.length);
+      }
+      function maybeFill() {
+        if (rendered >= shown.length || !workInner) return;
+        if (workInner.scrollHeight <= workInner.clientHeight + 90) {
+          appendBatch();
+          setTimeout(maybeFill, 150);
+        }
+      }
+      function renderGrid() {
+        shown = ITEMS.filter((p) => curFilter === "all" || p.c === curFilter);
+        empty.hidden = shown.length > 0;
+        rendered = 0;
+        cardEls = [];
+        grid.innerHTML = "";
+        appendBatch();
+        setTimeout(maybeFill, 160);
+      }
+      if (workInner) {
+        workInner.addEventListener(
+          "scroll",
+          () => {
+            if (rendered >= shown.length) return;
+            if (
+              workInner.scrollHeight -
+                workInner.clientHeight -
+                workInner.scrollTop <
+              700
+            )
+              appendBatch();
+          },
+          {
+            passive: true,
+          },
+        );
       }
       document.getElementById("cAll").textContent = ITEMS.length;
       document.getElementById("cWeb").textContent = ITEMS.filter(
@@ -4581,17 +4665,36 @@
             es.forEach((e) => {
               if (!e.isIntersecting) return;
               const img = e.target;
-              img.onload = () => img.classList.add("on");
-              img.onerror = () => {
-                img.closest(".thumb").style.minHeight = "140px";
-                img.remove();
+              const src = img.dataset.src;
+              if (!src) {
+                imgIO.unobserve(img);
+                return;
+              }
+              if (IMG_CACHE.has(src)) {
+                img.src = src;
+                img.classList.add("on");
+                img.removeAttribute("data-src");
+                imgIO.unobserve(img);
+                return;
+              }
+              img.onload = () => {
+                IMG_CACHE.add(src);
+                img.classList.add("on");
+                img.removeAttribute("data-src");
+                scheduleLayout();
               };
-              img.src = img.dataset.src;
+              img.onerror = () => {
+                const th = img.closest(".thumb");
+                if (th) th.style.minHeight = "140px";
+                img.remove();
+                scheduleLayout();
+              };
+              img.src = src;
               imgIO.unobserve(img);
             });
           },
           {
-            rootMargin: "300px",
+            rootMargin: "400px",
           },
         );
         grid.querySelectorAll("img[data-src]").forEach((i) => imgIO.observe(i));
@@ -4600,7 +4703,7 @@
       addEventListener("resize", () => {
         clearTimeout(rzT);
         rzT = setTimeout(() => {
-          if (colCount() !== lastCols) renderGrid();
+          maybeFill();
         }, 180);
       });
       document.querySelectorAll(".filters button").forEach((b) =>
@@ -4610,8 +4713,8 @@
             .forEach((x) => x.setAttribute("aria-pressed", "false"));
           b.setAttribute("aria-pressed", "true");
           curFilter = b.dataset.f;
+          if (workInner) workInner.scrollTop = 0;
           renderGrid();
-          grid.closest(".pg-inner").scrollTop = 0;
         }),
       );
       const toast = document.getElementById("toast"),
@@ -4682,8 +4785,10 @@
           "--enter",
           dir > 0 ? "24px" : dir < 0 ? "-24px" : "0",
         );
+        const src = imgs[imgIndex];
         const im = new Image();
         im.onload = () => {
+          IMG_CACHE.add(src);
           lbImg.src = im.src;
           lbImg.alt = p.t;
           lbLoad.style.display = "none";
@@ -4693,7 +4798,7 @@
           lbLoad.style.display = "none";
           lbImg.removeAttribute("src");
         };
-        im.src = imgs[imgIndex];
+        im.src = src;
         lbTitle.textContent = p.t;
         lbDesc.textContent = descOf(p);
         lbPos.innerHTML =
@@ -4810,9 +4915,13 @@
       );
       function loadImg(el) {
         if (!el) return;
-        el.onload = () => el.classList.add("on");
+        const src = el.dataset.src;
+        el.onload = () => {
+          IMG_CACHE.add(src);
+          el.classList.add("on");
+        };
         el.onerror = () => el.remove();
-        el.src = el.dataset.src;
+        el.src = src;
       }
       loadImg(document.querySelector(".cover-photo img"));
       loadImg(document.querySelector(".mnav-ph img"));
@@ -4926,6 +5035,7 @@
           cur === 0
             ? "Annashrul Yusuf — Fullstack Developer Portfolio"
             : titlesByLang[lang][cur] + " · Annashrul Yusuf";
+        if (cur === SLUGS.indexOf("work")) setTimeout(maybeFill, 120);
       }
       function go(n) {
         n = Math.max(0, Math.min(total - 1, n));
@@ -4952,6 +5062,13 @@
             atTop = inner.scrollTop <= 0,
             atBot =
               inner.scrollHeight - inner.clientHeight - inner.scrollTop <= 1;
+          /* On the work page, keep scrolling while there are still more cards to load — don't flip. */
+          if (
+            pages[cur].classList.contains("work") &&
+            down &&
+            rendered < shown.length
+          )
+            return;
           if ((down && !atBot) || (!down && !atTop)) return;
           e.preventDefault();
           if (lock) return;
@@ -5009,6 +5126,13 @@
           const atTop = inner.scrollTop <= 0,
             atBot =
               inner.scrollHeight - inner.clientHeight - inner.scrollTop <= 1;
+          /* On the work page, swiping up while more cards remain should scroll, not flip. */
+          if (
+            pages[cur].classList.contains("work") &&
+            dy < 0 &&
+            rendered < shown.length
+          )
+            return;
           if (dy < 0 && atBot) go(cur + 1);
           else if (dy > 0 && atTop) go(cur - 1);
         },
