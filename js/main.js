@@ -208,7 +208,11 @@ const I18N = {
 					t: "Meno POS — Retail, Bengkel, Resto, Cafe",
 					l: "https://menopos.vercel.app",
 					imgs: [
-						W + 'mini-pos.png', W + 'min-pos-kasir.png'
+						W + 'menopos-landing.png',
+						W + 'menopos-dashboard-1.png',
+						W + 'menopos-dashboard-2.png',
+						W + 'menopos-kasir-1.png',
+						W + 'menopos-kasir-2.png',	
 					]
             	},
 				{
