@@ -188,15 +188,15 @@ const I18N = {
               , M = PATH_IMG + "mobile/";
             const ITEMS = [
 				{
-					c: 'web',
+					c: 'mobile',
 					t: "Chat Web Realtime",
 					l: "",
 					imgs: [
-						W + 'chat-web-1.jpeg', W + 'chat-web-2.jpg', W + 'chat-web-3.jpg'
+						M + 'chat-web-1.jpeg', M + 'chat-web-2.jpg', M + 'chat-web-3.jpg'
 					]
             	},
 				{
-					c: 'mobile',
+					c: 'web',
 					t: "Chat Web Realtime",
 					l: "https://wachat-web-1018591685581.asia-southeast2.run.app/",
 					imgs: [
