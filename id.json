@@ -1,178 +1,96 @@
 {
-  "header": {
-    "name": "Annashrul Yusuf S.Tr,T",
-    "title": "Pengembang Perangkat Lunak",
-    "downloadCV": "Unduh CV"
-  },
-  "menu": {
-    "home": "Beranda",
-    "aboutMe": "Tentang Saya",
-    "resume": "Riwayat Hidup",
-    "portofolio": "Portofolio"
-  },
-  "content": {
-    "aboutMe": {
-      "title": "Tentang Saya",
-      "body": "Assalamualaikum. Nama saya Annashrul, dan saya adalah seorang Pengembang Perangkat Lunak dengan pengalaman luas di industri sejak tahun 2016. Saya memiliki dorongan kreatif yang kuat dan tingkat dedikasi yang tinggi untuk mengembangkan solusi perangkat lunak yang inovatif dan berkualitas tinggi. Sepanjang karir saya, saya telah berhasil menyelesaikan berbagai proyek dengan skala dan kompleksitas yang berbeda. Kemampuan saya untuk memecahkan masalah, berkomunikasi secara efektif, dan berkolaborasi dalam tim telah memungkinkan saya mencapai tujuan dan melampaui ekspektasi. Saya memiliki keahlian dalam berbagai bahasa pemrograman dan terampil dalam menggunakan berbagai kerangka kerja. Selain itu, saya memiliki pengetahuan luas tentang sistem operasi, basis data, dan prinsip-prinsip pengembangan perangkat lunak. Saya adalah pembelajar cepat dan selalu bersemangat untuk menjelajahi hal-hal baru. Saya yakin bahwa saya dapat memberikan kontribusi yang signifikan untuk tim Anda.",
-      "age": "Umur",
-      "residence": "Tempat Tinggal",
-      "address": "Alamat",
-      "email": "Surel",
-      "phone": "Telepon"
-    },
-    "resume": {
-      "title": "Riwayat Hidup",
-      "experience": {
-        "title": "Pengalaman",
-        "body": [
-          {
-            "title": "PT KALDUSARI NABATI",
-            "position": "Frontend Developer - onsite",
-            "periode": "Mei 2023 - sekarang",
-            "desc": [
-              "Bekerja sama dengan anggota tim lain untuk mengidentifikasi dan menghilangkan bug perangkat lunak.",
-              "Bekerja dengan tim teknis dan desain untuk mengembangkan aplikasi perangkat lunak yang inovatif.",
-              "Melakukan pemeliharaan pada beberapa aplikasi yang ada."
-            ]
-          },
-          {
-            "title": "PT NETINDO MEDIATAMA PERKASA",
-            "position": "Web Developer - remote",
-            "periode": "Des 2023 - Des 2024",
-            "desc": [
-              "Memelihara aplikasi Android dan Web POS (Point of Sale).",
-              "Mengonfigurasi pengaturan untuk klien baru yang menggunakan sistem POS (Point of Sale).",
-              "Mengembangkan API.",
-              "Mengintegrasikan API ke dalam frontend (web).",
-              "Menyebarkan aplikasi ke Digital Ocean."
-            ]
-          },
-          {
-            "title": "PT TRIWIKRAMA",
-            "position": "Web Developer - remote",
-            "periode": "Jan - Jun 2023",
-            "desc": [
-              "Memelihara aplikasi HRIS.",
-              "Memelihara aplikasi ERP.",
-              "Mengembangkan API.",
-              "Mengintegrasikan API ke dalam frontend (web)."
-            ]
-          },
-          {
-            "title": "PT ELSPASIAL",
-            "position": "Web Developer - remote",
-            "periode": "Feb 2023 - Nov 2023",
-            "desc": [
-              "Memelihara Aplikasi Koperasi TOYOTA.",
-              "Memelihara Aplikasi Shuttle Karyawan TOYOTA.",
-              "Mengembangkan API.",
-              "Mengintegrasikan API ke dalam frontend (web)."
-            ]
-          },
-          {
-            "title": "PT LAYANAN CERDAS INDONESIA",
-            "position": "Web Developer - onsite",
-            "periode": "Jun 2022 - Mar 2023",
-            "desc": [
-              "Bekerja sama dengan anggota tim lain untuk mengidentifikasi dan menghilangkan bug perangkat lunak.",
-              "Bekerja dengan tim teknis dan desain untuk mengembangkan aplikasi perangkat lunak yang inovatif.",
-              "Melakukan pemeliharaan pada beberapa aplikasi yang ada.",
-              "Merancang basis data.",
-              "Mengembangkan API.",
-              "Mengintegrasikan API ke dalam frontend (web).",
-              "Menjadi anggota panitia logistik untuk acara T20."
-            ]
-          },
-          {
-            "title": "PT NETINDO MEDIATAMA PERKASA",
-            "position": "WEB & ANDROID DEVELOPER - onsite",
-            "periode": "Des 2018 - Jun 2022",
-            "desc": [
-              "Mengunjungi pelanggan untuk melakukan pemeliharaan.",
-              "Bekerja sama dengan anggota tim lain untuk mengidentifikasi dan menghilangkan bug perangkat lunak.",
-              "Bekerja dengan tim teknis dan desain untuk mengembangkan aplikasi perangkat lunak yang inovatif.",
-              "Melakukan pemeliharaan pada beberapa aplikasi yang ada.",
-              "Menjelajahi bahasa pemrograman untuk diterapkan dalam proyek baru.",
-              "Merancang basis data.",
-              "Mengembangkan API.",
-              "Mengintegrasikan API ke dalam frontend (web)."
-            ]
-          },
-          {
-            "title": "PT THAIBAH",
-            "position": "Fullstack Developer - remote",
-            "periode": "Feb – Des 2018",
-            "desc": [
-              "Mengembangkan aplikasi web Multi-Level Marketing.",
-              "Mengembangkan aplikasi Android Multi-Level Marketing.",
-              "Memelihara aplikasi inventaris.",
-              "Mengembangkan aplikasi menggunakan React.js (frontend), Laravel (backend), dan PostgreSQL (database)."
-            ]
-          },
-          {
-            "title": "PT AROMANIS SIMPING",
-            "position": "Fullstack Developer - remote",
-            "periode": "Des 2017 – Feb 2018",
-            "desc": [
-              "Mengembangkan aplikasi inventaris.",
-              "Memelihara aplikasi inventaris.",
-              "Mengembangkan aplikasi menggunakan React.js (frontend), Node.js (backend), dan PostgreSQL (database).",
-              "Menyebarkan aplikasi ke shared hosting.",
-              "Memecahkan masalah perangkat keras."
-            ]
-          },
-          {
-            "title": "FREELANCE",
-            "position": "Fullstack Developer - remote",
-            "periode": "Jan 2016 - Sekarang",
-            "desc": [
-              "Memotong UI.",
-              "Merancang basis data.",
-              "Merancang API.",
-              "Mengintegrasikan API dengan frontend.",
-              "Mengonfigurasi server.",
-              "Tech Stack: CodeIgniter, Laravel, React.js, Next.js, Vue.js, PHP Native, Node.js, Indexed DB, SQL Server, MySQL, PostgreSQL, Flutter, SQLite, Firebase, MongoDB, Server."
-            ]
-          }
-        ]
-      },
-      "education": {
-        "title": "pendidikan",
-        "body": [
-          {
-            "periode": "2015 - 2019",
-            "name": "POLITEKNIK TEDC BANDUNG",
-            "major": "Teknik Informatika"
-          },
-          {
-            "periode": "2012 - 2015",
-            "name": "SMK PGRI 3 CIMAHI",
-            "major": "Teknik Pendingin & Tata Udara"
-          },
-          {
-            "periode": "2009 - 2012",
-            "name": "SMPN 5 CIMAHI",
-            "major": ""
-          },
-          {
-            "periode": "2003 - 2009",
-            "name": "SDN PADASUKA MANDIRI II",
-            "major": ""
-          }
-        ]
-      },
-      "skill": {
-        "title": "keahlian"
-      },
-      "knowledge": {
-        "title": "pengetahuan",
-        "body": [
-          "Pemasaran",
-          "Manajemen Tim",
-          "Komunikasi",
-          "Pemecahan Masalah"
-        ]
-      }
-    }
-  }
+  "badge": "Fullstack Developer",
+  "avail": "Lagi terbuka buat freelance & full-time",
+  "h1lead": "Aku bikin software,",
+  "h1em": "dari awal sampai jadi",
+  "h1tail": ".",
+  "lede": "Udah ngoprek web sama mobile dari 2016. Mulai dari database, API, sampai deployment, aku garap semuanya sendiri.",
+  "cs_exp": "Tahun jalan",
+  "cs_proj": "Proyek",
+  "cs_co": "Perusahaan",
+  "cta_cv": "Ambil CV-ku",
+  "hint": "scroll buat buka halaman",
+  "k_about": "Tentang",
+  "about1": "Aku oke aja kerja sendiri atau bareng tim, dan emang suka nyari cara paling cepet dan rapi buat nyelesain sesuatu.",
+  "about2": "Aku doyan ngulik hal baru di dunia dev, belajar bahasa baru buat proyek berikutnya, dan narik sistem lama biar lebih modern. Aku pernah mindahin back office POS dari PHP ke JavaScript, ganti database dari SQL Server ke PostgreSQL, dan bikin macem-macem dari platform MLM sampai fintech, ERP, dan toko online.",
+  "s_exp": "Sejak",
+  "s_co": "Perusahaan",
+  "s_proj": "Proyek",
+  "s_lang": "Bahasa utama",
+  "k_xp1": "Tempat kerja · terbaru",
+  "k_xp2": "Tempat kerja · awal-awal",
+  "now": "Sekarang",
+  "r_web": "Web Developer",
+  "r_full": "Fullstack Developer",
+  "t_free": "Freelance",
+  "t_remote": "Remote",
+  "independent": "Sendiri",
+  "j1a": "Bikin sistem ERP internal sama Sales Monitoring Dashboard",
+  "j1b": "Garap aplikasi News Portal Center, R&D, SSO, sama Web Portal",
+  "j1c": "Bikin alur URL dinamis buat build web pakai Next.js",
+  "j1d": "Bikin UI component library Pink Lava",
+  "j2a": "Ngerawat aplikasi POS Android & Web",
+  "j2b": "Nyiapin sistem buat klien POS baru",
+  "j2c": "Bikin dan nyambungin API, terus deploy ke DigitalOcean",
+  "j3a": "Bikin aplikasi Koperasi dari nol",
+  "j3b": "Rancang database, bikin API, sambungin ke frontend",
+  "j4a": "Bikin aplikasi HC Portal",
+  "j4b": "Desain database, bikin API, sambungin ke frontend",
+  "j5a": "Aplikasi Koperasi Karyawan Toyota & POS Café Toyota pakai React.js",
+  "j5b": "API trip KAI pakai CodeIgniter & MySQL",
+  "j5c": "Desain ulang admin Tripisia, plus nambahin fitur ke Sportstrip",
+  "j6a": "Pegang N-POS dari desain sampai testing dan perawatan",
+  "j6b": "Mindahin back office dari CodeIgniter ke React.js & Node.js",
+  "j6c": "Mindahin database dari SQL Server ke PostgreSQL",
+  "j6d": "Bikin aplikasi fintech (Next.js), e-commerce, news portal",
+  "j6e": "Rilis aplikasi Flutter: fintech, monitoring, N-PAY",
+  "j7a": "Bikin aplikasi web MLM",
+  "j7b": "Ngerawat aplikasi Android MLM",
+  "j7c": "Deploy ke shared hosting",
+  "j8a": "Bikin dan ngerawat aplikasi inventory",
+  "j8b": "Frontend React.js, backend Node.js, PostgreSQL",
+  "j8c": "Deployment plus benerin hardware dikit-dikit",
+  "j9a": "UI slicing, desain database, bikin dan nyambungin API",
+  "j9b": "Bikin dan deploy WordPress",
+  "j9c": "Macem-macem: PHP, JS, Flutter, Golang",
+  "k_skills": "Keahlian & sekolah",
+  "sk_quote": "Stack yang sering aku pakai, dari <em>database</em> sampai <em>deployment</em>.",
+  "sk_primary": "Andalan",
+  "sk_toolkit": "Semua perkakas",
+  "since": "sejak",
+  "role_react": "Tampilan web",
+  "role_next": "Platform web",
+  "role_laravel": "API & backend",
+  "role_flutter": "Aplikasi mobile",
+  "role_data": "Lapisan data",
+  "sk_native": "Native",
+  "sk_dbcms": "Database & CMS",
+  "sk_styling": "Styling",
+  "sk_tools": "Tools & deploy",
+  "edu": "Sekolah",
+  "k_work": "Beberapa karyaku",
+  "w_title": "Yang udah aku bikin",
+  "w_sub": "Platform web sama aplikasi mobile: POS, ERP, fintech, toko online, dan masih banyak lagi.",
+  "f_all": "Semua",
+  "f_web": "Web",
+  "f_mob": "Mobile",
+  "w_empty": "Belum ada apa-apa di kategori ini.",
+  "lb_visit": "Lihat langsung",
+  "lb_share": "Bagikan",
+  "share_copied": "Link-nya udah disalin",
+  "c_eyebrow": "Lagi ada nih",
+  "c_title": "Yuk bikin sesuatu",
+  "c_title_em": "yang beneran berguna.",
+  "c_sub": "Freelance atau full-time, kirim aja brief singkat, nanti aku bales, biasanya hari itu juga.",
+  "c_email_btn": "Sapa aku",
+  "load": "lagi buka folio",
+  "nav_titles": [
+    "Sampul",
+    "Tentang",
+    "Pengalaman",
+    "Pengalaman",
+    "Keahlian",
+    "Karya",
+    "Kontak"
+  ]
 }

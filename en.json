@@ -1,178 +1,96 @@
 {
-  "header": {
-    "name": "Annashrul Yusuf S.Tr,T",
-    "title": "Software Developer",
-    "downloadCV": "Download CV"
-  },
-  "menu": {
-    "home": "Home",
-    "aboutMe": "About Me",
-    "resume": "Resume",
-    "portofolio": "Portfolio"
-  },
-  "content": {
-    "aboutMe": {
-      "title": "About Me",
-      "body": "Assalamualaikum. My name is Annashrul, and I am a Software Developer with extensive experience in the industry since 2016. I have a strong creative drive and a high level of dedication to developing innovative and high-quality software solutions. Throughout my career, I have successfully completed various projects of different scales and complexities. My ability to solve problems, communicate effectively, and collaborate within teams has enabled me to achieve goals and exceed expectations. I possess expertise in multiple programming languages and am skilled in using various frameworks. Additionally, I have a broad knowledge of operating systems, databases, and software development principles. I am a quick learner and always eager to explore new things. I am confident that I can make a significant contribution to your team.",
-      "age": "Age",
-      "residence": "residence",
-      "address": "Address",
-      "email": "e-mail",
-      "phone": "phone"
-    },
-    "resume": {
-      "title": "Resume",
-      "experience": {
-        "title": "Experience",
-        "body": [
-          {
-            "title": "PT KALDUSARI NABATI",
-            "position": "Frontend Developer - onsite",
-            "periode": "Mei 2023 - current",
-            "desc": [
-              "Collaborated with other team members to identify and eliminate software bugs.",
-              "Worked across technical and design teams to develop innovative software applications.",
-              "Performed maintenance on several existing applications."
-            ]
-          },
-          {
-            "title": "PT NETINDO MEDIATAMA PERKASA",
-            "position": "Web Developer - remote",
-            "periode": "Des 2023 - Des 2024",
-            "desc": [
-              "Maintained Android and Web POS (Point of Sale) applications.",
-              "Configured settings for new clients using the POS (Point of Sale) system.",
-              "Developed APIs.",
-              "Integrated APIs into the frontend (web).",
-              "Deployed applications to Digital Ocean."
-            ]
-          },
-          {
-            "title": "PT TRIWIKRAMA",
-            "position": "Web Developer - remote",
-            "periode": "Jan - Jun 2023",
-            "desc": [
-              "Maintained HRIS applications.",
-              "Maintained ERP applications.",
-              "Developed APIs.",
-              "Integrated APIs into the frontend (web)."
-            ]
-          },
-          {
-            "title": "PT ELSPASIAL",
-            "position": "Web Developer - remote",
-            "periode": "Feb 2023 - Nov 2023",
-            "desc": [
-              "Maintained the TOYOTA Cooperative Application.",
-              "Maintained the TOYOTA Employee Shuttle Application.",
-              "Developed APIs.",
-              "Integrated APIs into the frontend (web)."
-            ]
-          },
-          {
-            "title": "PT LAYANAN CERDAS INDONESIA",
-            "position": "Web Developer - onsite",
-            "periode": "Jun 2022 - Mar 2023",
-            "desc": [
-              "Collaborated with other team members to identify and eliminate software bugs.",
-              "Worked across technical and design teams to develop innovative software applications.",
-              "Performed maintenance on several existing applications.",
-              "Designed databases.",
-              "Developed APIs.",
-              "Integrated APIs into the frontend (web).",
-              "Served as a logistics committee member for the T20 event."
-            ]
-          },
-          {
-            "title": "PT NETINDO MEDIATAMA PERKASA",
-            "position": "WEB & ANDROID DEVELOPER - onsite",
-            "periode": "Des 2018 - Jun 2022",
-            "desc": [
-              "Visited customers to perform maintenance.",
-              "Collaborated with other team members to identify and eliminate software bugs.",
-              "Worked across technical and design teams to develop innovative software applications.",
-              "Performed maintenance on several existing applications.",
-              "Explored programming languages to be applied in new projects.",
-              "Designed databases.",
-              "Developed APIs.",
-              "Integrated APIs into the frontend (web)."
-            ]
-          },
-          {
-            "title": "PT THAIBAH",
-            "position": "Fullstack Developer remote",
-            "periode": "Feb – Des 2018",
-            "desc": [
-              "Developed a Multi-Level Marketing web application.",
-              "Developed a Multi-Level Marketing Android application.",
-              "Maintained an inventory application.",
-              "Developed an application using React.js (frontend), Laravel (backend), and PostgreSQL (database)."
-            ]
-          },
-          {
-            "title": "PT AROMANIS SIMPING",
-            "position": "Fullstack Developer - remote",
-            "periode": "Des 2017 – Feb 2018",
-            "desc": [
-              "Developed an inventory application.",
-              "Maintained an inventory application.",
-              "Developed an application using React.js (frontend), Node.js (backend), and PostgreSQL (database).",
-              "Deployed applications to shared hosting.",
-              "Troubleshot hardware."
-            ]
-          },
-          {
-            "title": "FREELANCE",
-            "position": "Fullstack Developer - remote",
-            "periode": "Jan 2016 - Sekarang",
-            "desc": [
-              "Slicing UI.",
-              "Designed databases.",
-              "Designed APIs.",
-              "Integrated APIs with the frontend.",
-              "Configured servers.",
-              "Tech Stack: CodeIgniter, Laravel, React.js, Next.js, Vue.js, PHP Native, Node.js, Indexed DB, SQL Server, MySQL, PostgreSQL, Flutter, SQLite, Firebase, MongoDB, Server."
-            ]
-          }
-        ]
-      },
-      "education": {
-        "title": "education",
-        "body": [
-          {
-            "periode": "2015 - 2019",
-            "name": "TEDC BANDUNG POLYTECHNIC",
-            "major": "Information Technology"
-          },
-          {
-            "periode": "2012 - 2015",
-            "name": "SMK PGRI 3 CIMAHI",
-            "major": "Refrigeration & Air Conditioning Engineering"
-          },
-          {
-            "periode": "2009 - 2012",
-            "name": "SMPN 5 CIMAHI",
-            "major": ""
-          },
-          {
-            "periode": "2003 - 2009",
-            "name": "SDN PADASUKA MANDIRI II",
-            "major": ""
-          }
-        ]
-      },
-      "skill": {
-        "title": "skills"
-      },
-      "knowledge": {
-        "title": "knowledge",
-        "body": [
-          "Marketing",
-          "Team Management",
-          "Communication",
-          "Problem-Solving"
-        ]
-      }
-    }
-  }
+  "badge": "Fullstack Developer",
+  "avail": "Open for freelance & full-time gigs",
+  "h1lead": "I build software,",
+  "h1em": "start to finish",
+  "h1tail": ".",
+  "lede": "Been building web and mobile stuff since 2016. Database, API, deployment, I handle the whole thing, no hand-offs.",
+  "cs_exp": "Years in",
+  "cs_proj": "Projects",
+  "cs_co": "Companies",
+  "cta_cv": "Grab my CV",
+  "hint": "scroll to flip the page",
+  "k_about": "About",
+  "about1": "I'm good solo or on a team, and I genuinely like figuring out the fastest, cleanest way to get something done.",
+  "about2": "I love poking at new things in dev, picking up new languages for whatever's next, and dragging old systems into the modern era. I've moved POS back offices from PHP to JavaScript, swapped databases from SQL Server to PostgreSQL, and built everything from MLM platforms to fintech, ERP, and online stores.",
+  "s_exp": "Since",
+  "s_co": "Companies",
+  "s_proj": "Projects",
+  "s_lang": "Main languages",
+  "k_xp1": "Where I've worked · lately",
+  "k_xp2": "Where I've worked · early days",
+  "now": "Now",
+  "r_web": "Web Developer",
+  "r_full": "Fullstack Developer",
+  "t_free": "Freelance",
+  "t_remote": "Remote",
+  "independent": "On my own",
+  "j1a": "Built the internal ERP and the Sales Monitoring Dashboard",
+  "j1b": "Shipped the News Portal Center, R&D, SSO and Web Portal apps",
+  "j1c": "Set up dynamic URL flow for web builds with Next.js",
+  "j1d": "Made the Pink Lava UI component library",
+  "j2a": "Kept the Android & Web POS apps running",
+  "j2b": "Got new POS clients set up and onboarded",
+  "j2c": "Built and wired up APIs, then shipped to DigitalOcean",
+  "j3a": "Built a Cooperative app from scratch",
+  "j3b": "Designed the database, made the API, hooked it to the frontend",
+  "j4a": "Built the HC Portal app",
+  "j4b": "Database design, API, and frontend hookup",
+  "j5a": "Toyota Employee Cooperative app & POS Café Toyota in React.js",
+  "j5b": "KAI trip API with CodeIgniter & MySQL",
+  "j5c": "Gave the Tripisia admin a redesign and added features to Sportstrip",
+  "j6a": "Ran N-POS end to end, from design to testing and upkeep",
+  "j6b": "Moved the back office from CodeIgniter to React.js & Node.js",
+  "j6c": "Migrated the database from SQL Server to PostgreSQL",
+  "j6d": "Built fintech (Next.js), e-commerce, and news portal apps",
+  "j6e": "Shipped Flutter apps: fintech, monitoring, N-PAY",
+  "j7a": "Built an MLM web app",
+  "j7b": "Kept the MLM Android app running",
+  "j7c": "Deployed to shared hosting",
+  "j8a": "Built and looked after an inventory app",
+  "j8b": "React.js front, Node.js back, PostgreSQL",
+  "j8c": "Deployment plus a bit of hardware troubleshooting",
+  "j9a": "UI slicing, database design, building and wiring up APIs",
+  "j9b": "WordPress builds and deployment",
+  "j9c": "A bit of everything: PHP, JS, Flutter, Golang",
+  "k_skills": "Skills & school",
+  "sk_quote": "The stack I actually reach for, from <em>database</em> to <em>deployment</em>.",
+  "sk_primary": "My go-tos",
+  "sk_toolkit": "The whole kit",
+  "since": "since",
+  "role_react": "Web interfaces",
+  "role_next": "Web platforms",
+  "role_laravel": "APIs & backend",
+  "role_flutter": "Mobile apps",
+  "role_data": "Data layer",
+  "sk_native": "Native",
+  "sk_dbcms": "Databases & CMS",
+  "sk_styling": "Styling",
+  "sk_tools": "Tools & deploy",
+  "edu": "School",
+  "k_work": "Some of my work",
+  "w_title": "Stuff I've built",
+  "w_sub": "Web platforms and mobile apps: POS, ERP, fintech, online stores, and a bunch more.",
+  "f_all": "All",
+  "f_web": "Web",
+  "f_mob": "Mobile",
+  "w_empty": "Nothing here in this category yet.",
+  "lb_visit": "Check it out",
+  "lb_share": "Share",
+  "share_copied": "Link copied, paste away",
+  "c_eyebrow": "Around right now",
+  "c_title": "Let's build something",
+  "c_title_em": "actually worth it.",
+  "c_sub": "Freelance or full-time, drop me a quick brief and I'll get back to you, usually same day.",
+  "c_email_btn": "Drop me a line",
+  "load": "opening the folio",
+  "nav_titles": [
+    "Cover",
+    "About",
+    "Experience",
+    "Experience",
+    "Skills",
+    "Work",
+    "Contact"
+  ]
 }
