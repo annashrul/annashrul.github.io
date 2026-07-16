@@ -55,7 +55,7 @@ const ITEMS = [
     id: "chat-web",
     c: "web",
     t: "Chat Web Realtime",
-    l: "https://wachat-web-1018591685581.asia-southeast2.run.app/",
+    l: "https://wacet.vercel.app/",
     d: {
       en: "Realtime web chat with instant messaging, deployed on Google Cloud Run.",
       id: "Chat web realtime dengan pesan instan, di-deploy di Google Cloud Run.",
@@ -66,7 +66,7 @@ const ITEMS = [
     id: "chat-mobile",
     c: "mobile",
     t: "Chat Web Realtime",
-    l: "",
+    l: "https://wacet.vercel.app",
     d: {
       en: "Mobile companion for the realtime chat, built for fast on-the-go messaging.",
       id: "Versi mobile buat chat realtime, dibuat biar enak buat chat sambil jalan.",
@@ -77,7 +77,7 @@ const ITEMS = [
     id: "wa-service",
     c: "web",
     t: "WA Service — WhatsApp Gateway",
-    l: "",
+    l: "https://waservice.vercel.app",
     d: {
       en: "WhatsApp service platform: send OTP, run a chatbot, and AI-integrated auto-replies, all from one gateway.",
       id: "Platform layanan WhatsApp: kirim OTP, chatbot, dan balas otomatis yang udah terintegrasi sama AI, semua dari satu gateway.",
@@ -92,7 +92,7 @@ const ITEMS = [
     id: "mondelez-inventory",
     c: "web",
     t: "Mondelez Inventory",
-    l: "",
+    l: "https://mondelez-inventory.vercel.app/",
     d: {
       en: "Inventory search engine you can query by image, voice or text, with live stock monitoring on top.",
       id: "Search engine inventory yang bisa dicari pakai gambar, suara, atau teks, plus monitoring stok secara real time.",
