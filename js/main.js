@@ -9,10 +9,7 @@ async function loadI18N() {
   );
   I18N = Object.fromEntries(entries);
 }
-const CV = {
-  en: "./file/cv-en.pdf",
-  id: "./file/cv-id.pdf",
-};
+const CV = "./file/cv.pdf";
 let lang = (navigator.language || "en").toLowerCase().startsWith("id")
   ? "id"
   : "en";
@@ -26,10 +23,10 @@ function applyLang() {
   ["cvFloat", "cvContactBtn", "cvMobile"].forEach((id) => {
     const a = document.getElementById(id);
     if (a) {
-      a.href = CV[lang];
+      a.href = CV;
       a.setAttribute(
         "download",
-        "Annashrul-Yusuf-CV-" + lang.toUpperCase() + ".pdf",
+        "Annashrul-Yusuf-CV.pdf",
       );
     }
   });
