@@ -25,15 +25,15 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git config --global --add safe.directory "$GITHUB_WORKSPACE"
 
-      - name: Write version.json
-        run: |
-          echo "{\"version\":\"${{ github.sha }}\",\"date\":\"$(date -u +'%Y-%m-%dT%H:%M:%SZ')\"}" > version.json
-
       - name: Rebase main
         run: |
           git fetch origin ${{ github.ref_name }}
           git checkout ${{ github.ref_name }}
-          git rebase origin/${{ github.ref_name }} || git pull --rebase
+          git rebase origin/${{ github.ref_name }}
+
+      - name: Write version.json
+        run: |
+          echo "{\"version\":\"${{ github.sha }}\",\"date\":\"$(date -u +'%Y-%m-%dT%H:%M:%SZ')\"}" > version.json
 
       - name: Commit & push
         run: |
