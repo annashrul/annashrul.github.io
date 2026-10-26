@@ -49,6 +49,28 @@ const PATH_IMG = "./img/",
   M = PATH_IMG + "mobile/";
 const ITEMS = [
   {
+    id: "mondelez-inventory",
+    c: "web",
+    t: "Mondelez Inventory",
+    l: "https://mondelez-inventory.vercel.app/",
+    d: {
+      en: "Inventory search engine you can query by image, voice or text, with live stock monitoring on top.",
+      id: "Search engine inventory yang bisa dicari pakai gambar, suara, atau teks, plus monitoring stok secara real time.",
+    },
+    imgs: [W + "mondelez-inventory.webp",W + "mondelez-inventory-admin.webp"],
+  },
+  {
+    id: "mondelez-inventory",
+    c: "mobile",
+    t: "Mondelez Inventory",
+    l: "https://mondelez-inventory.vercel.app/",
+    d: {
+      en: "Inventory search engine you can query by image, voice or text, with live stock monitoring on top.",
+      id: "Search engine inventory yang bisa dicari pakai gambar, suara, atau teks, plus monitoring stok secara real time.",
+    },
+    imgs: [M + "mondelez-inventory.webp"],
+  },
+  {
     id: "chat-web",
     c: "web",
     t: "Chat Web Realtime",
@@ -85,17 +107,7 @@ const ITEMS = [
       W + "wa-service-3.webp",
     ],
   },
-  {
-    id: "mondelez-inventory",
-    c: "web",
-    t: "Mondelez Inventory",
-    l: "https://mondelez-inventory.vercel.app/",
-    d: {
-      en: "Inventory search engine you can query by image, voice or text, with live stock monitoring on top.",
-      id: "Search engine inventory yang bisa dicari pakai gambar, suara, atau teks, plus monitoring stok secara real time.",
-    },
-    imgs: [W + "mondelez-inventory.webp"],
-  },
+  
   {
     id: "menopos-web",
     c: "web",
